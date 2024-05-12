@@ -15,21 +15,45 @@
 </head>
 <body>
     <div class="header">
-        <h1>Välkommen till bageriet</h1>
+        <h1>Administrera menyn</h1>
     </div>
     <div class="main-area">
         <div class="side-menu-img">
     <div class="side-menu">
-        <p>Besökare</p>
-        <a href="menu.html">Logga in</a>
+        
         <p>Administratör</p>
-        <a href="admin.html">Logga in</a>
+        <p>Inloggad som: Jill</p>
+        <div class="admin-tasks">
+            <a href="#">Startsida</a>
+            <a href="#">Meny</a>
+            <a href="#">Lägg till produkt</a>
+            <a href="#">Redigera produkt</a>
+            <a href="#">Ta bort produkt</a>
+            <a href="#">Kontaktuppgifter</a>
+            <a href="#">Övrig information</a>
+        </div>
+        
 
     </div>
 </div>
     <div class="container">
         <h3>I det här området händer det saker.</h3>
-       
+        <form id="menu-item-form" method="POST">
+            <label for="item-number">Artikelnummer</label>
+            <input type="text" id="item-number" name="item-number">
+            <br>
+            <label for="item-name">Produkt</label>
+            <input type="text" id="item-name" name="item-name">
+            <br>
+            <label for="item-description">Beskrivning</label>
+            <input type="text" id="item-description" name="item-description">
+            <br>
+            <label for="item-price">Pris</label>
+            <input type="text" id="item-price" name="item-price">
+            <br>
+            <input type="submit" id="add-btn" value="Lägg till produkt">
+
+        </form>
     </div>
 </div>
 <div class="footer">
