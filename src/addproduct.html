@@ -17,48 +17,44 @@
     <div class="header">
         <h1>Administrera menyn</h1>
     </div>
-    <div class="main-area">
-        <div class="side-menu-img">
-    <div class="side-menu">
-        
-        <p>Administratör</p>
-        <p>Inloggad som: Jill</p>
-        <div class="admin-tasks">
-            <a href="#">Startsida</a>
-            <a href="#">Meny</a>
-            <a href="#">Lägg till produkt</a>
-            <a href="#">Redigera produkt</a>
-            <a href="#">Ta bort produkt</a>
-            <a href="#">Kontaktuppgifter</a>
-            <a href="#">Övrig information</a>
+    <div class="main-area">            
+        <div class="side-menu">
+            <p>Administratör</p>
+            <p>Inloggad som: Jill</p>
+            <div class="admin-tasks">
+                <a href="#">Startsida</a>
+                <a href="#">Meny</a>
+                <a href="#">Lägg till produkt</a>
+                <a href="#">Redigera produkt</a>
+                <a href="#">Ta bort produkt</a>
+                <a href="#">Kontaktuppgifter</a>
+                <a href="#">Övrig information</a>
+            </div>       
         </div>
-        
 
-    </div>
-</div>
-    <div class="admin-container">
-        <h3>I det här området händer det saker.</h3>
+        <div class="admin-area">
+            <h3>I det här området händer det saker.</h3>
         <form id="menu-item-form" method="POST">
-            <label for="item-category">Kategori</label>
+            <label for="item-category">Kategori</label><br>
             <input type="text" id="item-category" name="item-category">
             <br>
-            <label for="item-number">Artikelnummer</label>
+            <label for="item-number">Artikelnummer</label><br>
             <input type="text" id="item-number" name="item-number">
             <br>
-            <label for="item-name">Produkt</label>
+            <label for="item-name">Produkt</label><br>
             <input type="text" id="item-name" name="item-name">
             <br>
-            <label for="item-description">Beskrivning</label>
+            <label for="item-description">Beskrivning</label><br>
             <input type="text" id="item-description" name="item-description">
             <br>
-            <label for="item-price">Pris</label>
+            <label for="item-price">Pris</label><br>
             <input type="text" id="item-price" name="item-price">
             <br>
             <input type="submit" id="add-btn" value="Lägg till produkt">
 
         </form>
+        </div>
     </div>
-</div>
 <div class="footer">
     <div class="footer-list">
         <p>Kontakt</p>

@@ -41,7 +41,7 @@ async function loginAdmin(e){
     e.preventDefault();
 
     try{
-        let response = await fetch('http://localhost:3335/bakery/loginadmin', {
+        let response = await fetch('http://localhost:3335/api/loginadmin', {
         method: "POST",
         headers: {
             "Content-type": "application/json"
