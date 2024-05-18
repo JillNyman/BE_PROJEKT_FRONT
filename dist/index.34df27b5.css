@@ -34,8 +34,38 @@ body {
   display: flex;
 }
 
-.side-menu-img {
-  width: 28%;
+.container {
+  z-index: 1;
+  text-align: center;
+  color: #747e77;
+  border-top: 8px double #c9d2cd;
+  border-bottom: 8px double #c9d2cd;
+  width: 90%;
+  margin: 10px 20px 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-size: larger;
+  font-weight: 500;
+  display: block;
+  position: relative;
+}
+
+.container:before {
+  content: "";
+  z-index: -1;
+  opacity: .3;
+  background: url("cafe.c336235d.jpg") center;
+  position: absolute;
+  inset: 0;
+}
+
+#main-area h3, .main-text {
+  background-color: #f0e4e580;
+  padding: 20px;
+}
+
+#show-customer-login:hover, #show-admin-login:hover {
+  cursor: pointer;
 }
 
 .side-menu {
@@ -44,7 +74,7 @@ body {
   text-align: center;
   border: 8px double #e4c5bb;
   width: 90%;
-  height: 500px;
+  height: auto;
   margin-right: 2%;
   padding: 40px 10px;
   font-weight: 600;
@@ -60,9 +90,9 @@ body {
 
 .side-menu a {
   border: 8px double #e4c5bb;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin: 75px auto;
   padding: 5px 15px;
+  line-height: 3.5;
 }
 
 .side-menu a:hover {
@@ -96,26 +126,27 @@ body {
     display: flex;
   }
 
-  .side-menu-img {
-    width: 90%;
-    margin: auto;
-    display: block;
-  }
-
   .side-menu {
     z-index: 1;
     text-align: center;
     border: 8px double #e4c5bb;
     width: 90%;
-    height: 160px;
-    margin-right: 0;
+    height: auto;
     padding: 5px;
     position: relative;
   }
 
   .side-menu a {
-    border: 2px double #e4c5bb;
+    border: 4px double #e4c5bb;
+    margin: 15px;
     padding: 5px 35px;
+    display: inline;
+  }
+
+  .btn-smallscreen {
+    flex-direction: row;
+    align-items: center;
+    display: flex;
   }
 
   .container {
@@ -188,5 +219,17 @@ body {
   color: #e6e1c4;
   background-color: #c9d2cd;
   border: 4px double #97a49b;
+}
+
+#login-admin-container {
+  border: 4px double #dfa0c9;
+  padding: 20px;
+  display: none;
+}
+
+#login-customer-container {
+  border: 4px double #e4c5bb;
+  padding: 20px;
+  display: none;
 }
 /*# sourceMappingURL=index.34df27b5.css.map */

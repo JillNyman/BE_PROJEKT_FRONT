@@ -20,16 +20,52 @@
     <div class="main-area">
         <div class="side-menu-img">
     <div class="side-menu">
-        <p>Besökare</p>
-        <a href="/menu.html">Logga in</a>
-        <p>Administratör</p>
-        <a href="/admin.html">Logga in</a>
+        <h3>Besökare</h3>
+        <div class="btn-smallscreen">
+        <a id="show-customer-login">Logga in</a><br>
+        <a id="create-customer-login">Ny kund?</a>
+    </div>
+        <h3>Administratör</h3>
+        <div class="btn-smallscreen">
+        <a id="show-admin-login">Logga in</a><br>
+        <a id="create-admin-login">Skapa admin</a>
+    </div>
 
     </div>
 </div>
     <div class="container">
-        <h3>I det här området händer det saker.</h3>
-       
+        
+        <div id="main-area">
+            <h3>I det här området händer det saker.</h3>
+            <p class="main-text">
+                Vi öppnar en ny butik i Liljeholmen den 23 juli! <br> Välkommen in till oss, första veckan har vi extra bra erbjudanden för våra trogna kunder. <br> Passa på att bli kund hos oss redan nu, registrera dig här till vänster.
+            </p>
+
+        </div>
+        <div id="login-admin-container">
+            <form id="login-admin" method="POST">
+            <label for="admin_name">Användarnamn (admin)</label>
+            <input type="text" id="admin_name" name="admin_name">
+            <br>
+            <label for="admin_password">Lösenord</label>
+            <input type="password" id="admin_password" name="admin_password">
+            <br>           
+            <input type="submit" id="login-admin-btn" value="Logga in">
+            </form>
+        </div>
+
+        <div id="login-customer-container">
+            <form id="login-customer" method="POST">
+            <label for="username">Användarnamn</label>
+            <input type="text" id="username" name="username">
+            <br>
+            <label for="password">Lösenord</label>
+            <input type="password" id="password" name="password">
+            <br>           
+            <input type="submit" id="login-customer-btn" value="Logga in">
+            </form>
+        </div>
+       <h3 id="message"></h3>
     </div>
 </div>
 <div class="footer">

@@ -39,16 +39,58 @@ body {
     
 }
 
-.side-menu-img{
-    width: 28%;
-    
+.container{
+    width: 90%;
+    position: relative;
+    z-index: 1;
+    display: block;
+    margin: 10px 20px 20px 20px;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-top: 8px double #c9d2cd;
+    border-bottom: 8px double #c9d2cd;
+    font-size: larger;
+    color: #747e77;
+    font-weight: 500;
 }
+
+.container:before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url("IMAGES/cafe.jpg") center center; 
+    opacity: .3;
+}
+
+#main-area h3{
+    background-color: rgba(240, 228, 229, 0.5);
+    padding: 20px;
+}
+
+.main-text{
+    background-color: rgba(240, 228, 229, 0.5);
+    padding: 20px;
+}
+
+/*INDEX, side menu*/
+#show-customer-login:hover, #show-admin-login:hover{
+    cursor: pointer;
+}
+/*
+#show-customer-login, #show-admin-login, #create-admin-login, #create-customer-login{
+    margin: 100px auto;
+}*/
 
 .side-menu{
     position: relative;
     z-index: 1;
     width: 90%;
-    height: 500px;
+    height: auto;
     color: #747e77;
     font-weight: 600;
     border: 8px double #e4c5bb;
@@ -72,8 +114,8 @@ body {
 .side-menu a{
     border: 8px double #e4c5bb;
     padding: 5px 15px;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin: 75px auto;
+    line-height: 3.5;
 }
 
 .side-menu a:hover{
@@ -109,28 +151,35 @@ body {
         
     }
 
-    .side-menu-img{
+   /* .side-menu-img{
         display: block;
         width: 90%;
         margin: auto;
         
-    }
+    }*/
     
     .side-menu{
         position: relative;
         z-index: 1;
         width: 90%;
-        height: 160px;
+        height: auto;
         border: 8px double #e4c5bb;
         padding: 5px 5px;
-        margin-right: 0;
         text-align: center;
     }
   
     
     .side-menu a{
-        border: 2px double #e4c5bb;
+        display:inline;
+        border: 4px double #e4c5bb;
         padding: 5px 35px;
+        margin: 15px;
+    }
+
+    .btn-smallscreen{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
     }
 
     .container{
@@ -207,3 +256,17 @@ body {
     color: #e6e1c4  ;
     border: 4px double #97a49b;
 }
+
+/*INDEX, main area*/
+#login-admin-container{
+    border: 4px double #dfa0c9;
+    padding: 20px;
+    display: none;
+}
+
+#login-customer-container{
+    border: 4px double #e4c5bb;
+    padding: 20px;
+    display: none;
+}
+
