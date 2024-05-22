@@ -2,13 +2,13 @@
 
 const productlistEl = document.getElementById("product-list");
 
-getProductList(e);
+getProductList();
 
 //Hämta lista på produkter
-async function getProductList(e){
-    e.preventDefault();
+async function getProductList(){
+    //e.preventDefault();
 
-    const response = await fetch("http://localhost:3335/menu", {
+    const response = await fetch("http://localhost:3334/api/menu", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -21,7 +21,7 @@ async function getProductList(e){
     makeProductList(data);
 };
 
-//Skriv ut listan
+//Skriv ut listan FUNKAR
 function makeProductList(data){
 
     data.forEach(dat => {
@@ -29,25 +29,23 @@ function makeProductList(data){
         
         newEl.innerHTML =`
         <tr rowspan="2">
-            <td> ${dat.prod_id} </td>
+            <td> ${dat.prod_id}</td>
             <td>${dat.prod_name} </td>
-            <td>${dat.prod_price} </td>
+            <td>${dat.prod_price} kr </td>
             <td>${dat.prod_description} </td>
        </tr>
        <tr>
            <td>${dat.prod_category}</td>
-            <td> </td>
+            <td > <a class="deleteBtn" href="delete/${dat.prod_id}">Radera</a></td>
+            <td><a class="editBtn" href="edit/${dat.prod_id}">Redigera</a></td>
             <td></td>
-            <td></td>
-            `;
+            `;       
 
-            let deleteBtn = document.createElement('button');
-            deleteBtn.textContent = "Radera";
-            deleteBtn.id = dat.prod_id;
-            deleteBtn.className = "deleteBtn";
-            deleteBtn.addEventListener('click', () => deletePost(dat.prod_id));
-            newEl.appendChild(deleteBtn);
-            episodes.appendChild(newEl);
+            let divLine = document.createElement('div');
+            divLine.className = "list-line";
+            newEl.appendChild(divLine);
+            
+            productlistEl.appendChild(newEl);
 
        });
 }

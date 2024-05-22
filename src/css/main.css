@@ -32,30 +32,83 @@ body {
     opacity: .4;
 }
 
-.main-area{
-    width: 100%;
+/*BRÖDSMULOR*/
+.navigator{
+    width: 90%;
     display: flex;
     flex-direction: row;
+    margin: 20px auto;
+}
+ul.breadcrumb{
+    padding: 10px 25px;
+    list-style: none;
+    background-color: #c9d2cd;
+} 
+
+ul.breadcrumb li{
+    display: inline;
+}
+ul.breadcrumb li+li:before{
+    padding: 10px;
+    color: #747e77;
+    content: "/\00a0";
+}
+
+ul.breadcrumb li a{
+    text-decoration: none;
+}
+
+ul.breadcrumb li a:hover{
+    cursor: pointer;
+    font-weight: 700;
+}
+
+ul.breadcrumb li a:visited{
+    color: #747e77;
+}
+ li.ur-here{
+    font-weight: 700;
+ }
+/*BRÖDSMULOR SLUT*/
+
+.main-area{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
     
 }
 
+
 .container{
-    width: 90%;
-    position: relative;
-    z-index: 1;
-    display: block;
-    margin: 10px 20px 20px 20px;
-    text-align: center;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    border-top: 8px double #c9d2cd;
-    border-bottom: 8px double #c9d2cd;
-    font-size: larger;
+    width: 65%;
+    border: 8px double #e4c5bb ;
+    margin-left: 4%;
+    padding: 20px;
     color: #747e77;
     font-weight: 500;
+    text-align: left;
 }
 
-.container:before{
+.container h1, .container h2, .container h3, .container h4{
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Petit Formal Script';
+}
+
+.admin-area{
+    border: 8px double #e4c5bb;
+    padding: 15px;
+}
+
+.admin-area h1, .admin-area h2, .admin-area h3, .admin-area h4{
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Petit Formal Script';
+    font-size: x-large;
+}
+
+/*.container:before{
     content: "";
     position: absolute;
     z-index: -1;
@@ -65,20 +118,20 @@ body {
     right: 0;
     background: url("IMAGES/cafe.jpg") center center; 
     opacity: .2;
-}
+}*/
 
-#main-area h3{
-    background-color: rgba(240, 228, 229, 0.5);
+#index-area h3{
+    background-color: rgba(244, 238, 238, 0.5);
     padding: 20px;
 }
 
 .main-text{
-    background-color: rgba(240, 228, 229, 0.5);
+    background-color:rgba(244, 238, 238, 0.5);
     padding: 20px;
 }
 
 /*INDEX, side menu*/
-#show-customer-login:hover, #show-admin-login:hover{
+#show-customer-login:hover, #show-admin-login:hover, #create-admin-login:hover, #create-customer-login:hover{
     cursor: pointer;
 }
 /*
@@ -87,54 +140,36 @@ body {
 }*/
 
 .side-menu{
-    position: relative;
-    z-index: 1;
     width: 30%;
     height: auto;
     color: #747e77;
-    font-weight: 600;
     border: 8px double #e4c5bb;
-    padding: 40px 10px;
-    margin-right: 2%;
+    padding: 30px 2%;
+    margin: auto 2% auto auto;
     text-align: center;
+    align-items: center;
 }
 
-.side-menu::before{
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-   /* background: url("IMAGES/beskuren_index.jpg") center center; */
-    /*opacity: .4;*/
-}
 
-.side-menu a{
+/*LÄNKAR*/
+.side-menu a{    
     border: 8px double #e4c5bb;
     padding: 5px 15px;
     margin: 15px auto;
-    line-height: 3.5;
+    line-height: 3.5;   
 }
 
 .side-menu a:hover{
     background-color: #e4c5bb;
     border: 8px double #f0e4e5;
-    font-weight: 800;
-
+    font-weight: 700;
 }
 
 .side-menu a:visited{
     color: #747e77;
 }
-
-.container{
-    width: 65%;
-    border: 8px double #e4c5bb ;
-    margin-left: 4%;
-    padding: 20px;
-}
+/*LÄNKAR SLUT*/
+/*GÖRA INFÄLLNING AV MENY ISTÄLLET?*/
 
 .footer {
     border-top: 8px double #c9d2cd;
@@ -143,7 +178,13 @@ body {
     padding: 20px;
 }
 
-@media screen and (max-width: 499px) {
+.footer-list a:visited{
+    color: #747e77;
+}
+
+
+
+@media screen and (max-width: 599px) {
     .main-area{
         width: 100%;
         display: flex;
@@ -151,28 +192,19 @@ body {
         
     }
 
-    .side-menu{
-        position: relative;
-        z-index: 1;
+    .side-menu{       
         width: 90%;
         height: auto;
         border: 8px double #e4c5bb;
         padding: 5px 5px;
-        text-align: center;
+        margin: 20px auto;
     }  
     
-    .side-menu a{
-        display:inline;
-        border: 4px double #e4c5bb;
-        padding: 5px 35px;
-        margin: 15px;
-    }
-
-    .btn-smallscreen{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
+    .side-menu a{ 
+        border: 4px double #e4c5bb;        
+        padding: 5px 35%;
+        margin: 20px auto;
+    }  
 
     .container{
         width: 78%;
@@ -190,6 +222,18 @@ body {
 .header-item-group{
     font-family: 'Petit Formal Script';
     border-bottom: 6px double #c9d2cd ;
+}
+.header-item-group a:visited{
+    color: #747e77;
+    text-decoration: none;
+}
+
+.header-item-group a:hover{
+    font-weight: 700;
+}
+
+.menu-img img{
+    opacity: 0.4;
 }
 
 .user-logged-in{
@@ -232,22 +276,40 @@ body {
     margin: 10px;
 }
 
-#add-btn{
-    margin-top: 5px;
-    line-height: 2;
-    color: #747e77;
-    width: 70%;
-    display: block;
-    align-items: center;
-    background-color: #f0e4e5 ;
-    border: 4px double #97a49b;
+tr{
+    margin-top: 20px;
 }
 
-#add-btn:hover{
+#add-btn, .deleteBtn, .editBtn, .orderBtn{
+   /* margin-top: 45px;*/
+    margin-bottom: 15px;
+    line-height: 2;
+    color: #747e77;
+    /*width: 70%;
+    display: block;*/
+    text-align: center;
+    background-color: #f0e4e5 ;
+    border: 4px double #97a49b;
+    font-family: 'playfair display';
+    padding: 5px;
+}
+
+#add-btn:hover {
     background-color: #e4c5bb;
     border: 4px double #f0e4e5;
     font-weight: 800;
 }
+
+.deleteBtn:hover, .editBtn:hover, .orderBtn:hover{
+    background-color: #e4c5bb;
+    border: 4px double #f0e4e5;
+    font-weight: 600;
+}
+
+/* FIXA SÅ KNAPPARNA ÄR PÅ RAD
+.deleteBtn, .editBtn{
+    display:
+}*/
 
 /*INDEX, main area*/
 #login-admin-container{
@@ -269,11 +331,11 @@ form{
 }
 
 input[type=text], input[type=password]{
-    width: 50%;
+    width: 90%;
     border: 4px double #e4c5bb;
     margin: 10px 0;
     padding: 7px 10px;
-    background-color: #f0e4e5;
+    background-color: #f4eeee;
     color: #747e77;
     font-family: 'playfair display';
     font-weight: 600;
@@ -296,17 +358,49 @@ input[type=submit]:hover{
     font-weight: 800;
 }
 
-/*ADMIN.HTML*/
-.admin-area{
-    border: 8px double #e4c5bb;
-    padding: 15px;
+#send-btn{
+    width: 90%;
+    display: block;
+    margin: 20px auto;
 }
 
-tr{
-    border-top: 2px solid #97a49b;
+/*ADMIN.HTML*/
+/*ADMIN-AREA MOTSVARAR "CONTAINER" I KUNDVYN*/
+
+
+
+
+.list-line{
+    width: 450%;
+    border-top: 1px solid #97a49b;
+    padding: 10px;
+    margin: 10px;
 }
 
 #message{
     height: 150px;
     resize: none;
+}
+
+/*Rubriker*/
+.header-text{
+    font-family: 'Petit Formal Script';
+}
+
+#create-customer-container{
+    border: 8px double #e4c5bb;
+    padding: 20px;
+    display: none;
+}
+
+#create-admin-container{
+    border: 8px double #e4c5bb;
+    padding: 20px;
+    display: none;
+}
+
+.product-frame{
+    border: 8px double #c9d2cd;
+    padding: 10px;
+    margin: 10px;
 }

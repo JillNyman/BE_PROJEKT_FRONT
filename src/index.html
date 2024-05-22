@@ -31,7 +31,7 @@
             </div>
          </div>
         <div class="container">        
-            <div id="main-area">
+            <div id="index-area">
                 <h3>I det här området händer det saker.</h3>
                 <p class="main-text">
                 Vi öppnar en ny butik i Liljeholmen den 23 juli! <br> Välkommen in till oss, första veckan har vi extra bra erbjudanden för våra trogna kunder. <br> Passa på att bli kund hos oss redan nu, registrera dig här till vänster.
@@ -51,6 +51,18 @@
                 </form>
             </div>
 
+            <div id="create-admin-container">
+                <form id="create-admin" method="POST">
+                <label for="new_admin_name">Välj användarnamn (admin)</label><br>
+                <input type="text" id="new_admin_name" name="new_admin_name">
+                <br>
+                <label for="new_admin_password">Välj lösenord</label><br>
+                <input type="password" id="new_admin_password" name="new_admin_password">
+                <br>           
+                <input type="submit" id="create-admin-btn" value="Skapa admin">
+                </form>
+            </div>
+
             <div id="login-customer-container">
                 <form id="login-customer" method="POST">
                 <label for="username">Användarnamn</label><br>
@@ -62,14 +74,26 @@
                 <input type="submit" id="login-customer-btn" value="Logga in">
                 </form>
             </div>
+
+            <div id="create-customer-container">
+                <form id="create-customer" method="POST">
+                <label for="new_username">Välj användarnamn</label><br>
+                <input type="text" id="new_username" name="new_username">
+                <br>
+                <label for="new_password">Välj lösenord</label><br>
+                <input type="password" id="new_password" name="new_password">
+                <br>           
+                <input type="submit" id="create-customer-btn" value="Skapa användare">
+                </form>
+            </div>
             <h3 id="message"></h3>
         </div>
     </div>
     <div class="footer">
         <div class="footer-list">
-            <p>Kontakt</p>
-            <p>Om oss</p>
-            <p>Samarbeten</p>
+            <a href="contact.html"><p>Kontakt</p></a>
+            <a href="about.html"><p>Om oss</p></a>
+            <p>Copyright 2024 Jill Nyman</p>
         </div>
     </div>
     

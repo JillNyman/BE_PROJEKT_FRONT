@@ -142,14 +142,14 @@
       this[globalName] = mainExports;
     }
   }
-})({"j2YDk":[function(require,module,exports) {
+})({"2a8DT":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
 var HMR_USE_SSE = false;
-module.bundle.HMR_BUNDLE_ID = "0bcb44a518dbc454";
+module.bundle.HMR_BUNDLE_ID = "73d37ba7b5e44c8c";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, HMR_USE_SSE, chrome, browser, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -583,137 +583,45 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
     });
 }
 
-},{}],"1SICI":[function(require,module,exports) {
+},{}],"7v6sf":[function(require,module,exports) {
 "use strict";
-//Sido-meny kund
-const showCustomerLoginEl = document.getElementById("show-customer-login"); //knapp för att visa inlogg kund
-const createCustomerLoginEl = document.getElementById("create-customer-login"); //knapp skapa ny kund
-//Sido-meny admin
-const showAdminLoginEl = document.getElementById("show-admin-login"); //knapp för att visa inlogg admin
-const createAdminLoginEl = document.getElementById("create-admin-login"); //knapp skapa ny 
-//Sidans huvudområde
-const mainAreaEl = document.getElementById("index-area");
-//Kund
-const customerContainerEl = document.getElementById("login-customer-container"); //container för inlogg kund
-const loginCustomerBtnEl = document.getElementById("login-customer-btn"); //logga in kund
-const inputCustomerEl = document.getElementById("username"); //input användarnamn kund
-const inputCustomerPassEl = document.getElementById("password"); //input lösenord kund
-//Skapa ny kund
-const newCustomerContainerEl = document.getElementById("create-customer-container"); //container för inlogg kund
-const newLoginCustomerBtnEl = document.getElementById("create-customer-btn"); //logga in kund
-const newInputCustomerEl = document.getElementById("new_username"); //input användarnamn kund
-const newInputCustomerPassEl = document.getElementById("new_password"); //input lösenord kund
-//Admin
-const adminContainerEl = document.getElementById("login-admin-container"); //container för inlogg admin
-const loginAdminBtnEl = document.getElementById("login-admin-btn"); //logga in admin
-const inputAdminEl = document.getElementById("admin_name"); //input användarnamn admin
-const inputAdminPassEl = document.getElementById("admin_password"); //input lösenord admin
-//Skapa ny admin
-const newAdminContainerEl = document.getElementById("create-admin-container"); //container för inlogg admin
-const newLoginAdminBtnEl = document.getElementById("create-admin-btn"); //logga in admin
-const newInputAdminEl = document.getElementById("new_admin_name"); //input användarnamn admin
-const newInputAdminPassEl = document.getElementById("new_admin_password"); //input lösenord admin
-const messageEl = document.getElementById("message"); //Eventuellt meddelande till användaren  
-//Eventlyssnare
-loginAdminBtnEl.addEventListener("click", loginAdmin, false); //logga in admin
-loginCustomerBtnEl.addEventListener("click", loginCustomer, false);
-//visa login kund
-showCustomerLoginEl.onclick = function() {
-    if (customerContainerEl.style.display === "none") {
-        customerContainerEl.style.display = "block";
-        adminContainerEl.style.display = "none";
-        mainAreaEl.style.display = "none";
-        newAdminContainerEl.style.display = "none";
-        newCustomerContainerEl.style.display = "none";
-    } else customerContainerEl.style.display = "none";
-};
-//visa login admin
-showAdminLoginEl.onclick = function() {
-    if (adminContainerEl.style.display === "none") {
-        adminContainerEl.style.display = "block";
-        customerContainerEl.style.display = "none";
-        mainAreaEl.style.display = "none";
-        newAdminContainerEl.style.display = "none";
-        newCustomerContainerEl.style.display = "none";
-    } else adminContainerEl.style.display = "none";
-};
-//knapp "visa skapa användare"
-createCustomerLoginEl.onclick = function() {
-    if (newCustomerContainerEl.style.display === "none") {
-        newCustomerContainerEl.style.display = "block";
-        adminContainerEl.style.display = "none";
-        mainAreaEl.style.display = "none";
-        customerContainerEl.style.display = "none";
-        newAdminContainerEl.style.display = "none";
-    } else newCustomerContainerEl.style.display = "none";
-};
-//knapp "visa skapa admin"
-createAdminLoginEl.onclick = function() {
-    if (newAdminContainerEl.style.display === "none") {
-        newAdminContainerEl.style.display = "block";
-        adminContainerEl.style.display = "none";
-        mainAreaEl.style.display = "none";
-        customerContainerEl.style.display = "none";
-        newCustomerContainerEl.style.display = "none";
-    } else newAdminContainerEl.style.display = "none";
-};
-async function loginAdmin(e) {
-    e.preventDefault();
-    try {
-        let response = await fetch("http://localhost:3334/api/auth/loginadmin", {
-            method: "POST",
-            headers: {
-                "Content-type": "application/json"
-            },
-            body: JSON.stringify({
-                admin_name: inputAdminEl.value,
-                admin_password: inputAdminPassEl.value
-            })
-        });
-        let data = await response.json();
-        if (!response.ok) {
-            messageEl.innerHTML = "Inloggningen misslyckades!";
-            throw new Error("Inloggningen misslyckades");
+let goodThingsEl = document.getElementById("good-things");
+getGood();
+//Hämta lista på produkter
+async function getGood() {
+    //e.preventDefault();
+    const response = await fetch("http://localhost:3334/api/menu", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
         }
-        console.log(data.response.token);
-        if (response.status === 200) {
-            localStorage.setItem("token", data.response.token);
-            window.location.href = "admin.html";
-        } else console.log("Fel e-postadress eller l\xf6senord");
-    } catch (error) {
-        //console.error("Error: " + error);
-        messageEl.innerHTML = "Fel anv\xe4ndarnamn eller l\xf6senord!";
-    }
+    });
+    let data = await response.json();
+    console.table(data);
+    makeGoodList(data);
 }
-async function loginCustomer(e) {
-    e.preventDefault();
-    try {
-        let response = await fetch("http://localhost:3333/api/cstauth/logincustomer", {
-            method: "POST",
-            headers: {
-                "Content-type": "application/json"
-            },
-            body: JSON.stringify({
-                customer_name: inputCustomerEl.value,
-                customer_password: inputCustomerPassEl.value
-            })
-        });
-        let data = await response.json();
-        if (!response.ok) {
-            messageEl.innerHTML = "Inloggningen misslyckades!";
-            throw new Error("Inloggningen misslyckades");
+//Skriv ut listan
+function makeGoodList(data) {
+    data.forEach((dat)=>{
+        if (dat.prod_category === "sm\xe5tt&gott") {
+            let newEl = document.createElement("div");
+            newEl.className = "product-frame";
+            newEl.innerHTML = `
+        <h3>${dat.prod_name}</h3>            
+        <h4>${dat.prod_price} </h4>
+        <p>${dat.prod_description} </p>       
+            `;
+            let orderBtn = document.createElement("button");
+            orderBtn.textContent = "Best\xe4ll";
+            orderBtn.id = dat.prod_id;
+            orderBtn.className = "orderBtn";
+            orderBtn.addEventListener("click", ()=>deletePost(dat.prod_id));
+            newEl.appendChild(orderBtn);
+            goodThingsEl.appendChild(newEl);
         }
-        console.log(data.response.token);
-        if (response.status === 200) {
-            localStorage.setItem("token", data.response.token);
-            window.location.href = "menu.html";
-        } else console.log("Fel e-postadress eller l\xf6senord");
-    } catch (error) {
-        //console.error("Error: " + error);
-        messageEl.innerHTML = "Fel anv\xe4ndarnamn eller l\xf6senord!";
-    }
+    });
 }
 
-},{}]},["j2YDk","1SICI"], "1SICI", "parcelRequirebfd0")
+},{}]},["2a8DT","7v6sf"], "7v6sf", "parcelRequirebfd0")
 
-//# sourceMappingURL=index.18dbc454.js.map
+//# sourceMappingURL=allgoodthings.b5e44c8c.js.map

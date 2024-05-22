@@ -18,63 +18,84 @@
         <h1>Välkommen till bageriet</h1>
     </div>
     <div class="main-area">
-        <div class="side-menu-img">
-    <div class="side-menu">
-        <h3>Besökare</h3>
-        <div class="btn-smallscreen">
-        <a id="show-customer-login">Logga in</a><br>
-        <a id="create-customer-login">Ny kund?</a>
-    </div>
-        <h3>Administratör</h3>
-        <div class="btn-smallscreen">
-        <a id="show-admin-login">Logga in</a><br>
-        <a id="create-admin-login">Skapa admin</a>
-    </div>
-
-    </div>
-</div>
-    <div class="container">
-        
-        <div id="main-area">
-            <h3>I det här området händer det saker.</h3>
-            <p class="main-text">
+        <div class="side-menu">
+            <h3>Besökare</h3>
+            <div class="btn-smallscreen">
+                <a id="show-customer-login">Logga in</a><br>
+                <a id="create-customer-login">Ny kund?</a>
+            </div>
+            <h3>Administratör</h3>
+            <div class="btn-smallscreen">
+                <a id="show-admin-login">Logga in</a><br>
+                <a id="create-admin-login">Skapa admin</a>
+            </div>
+         </div>
+        <div class="container">        
+            <div id="index-area">
+                <h3>I det här området händer det saker.</h3>
+                <p class="main-text">
                 Vi öppnar en ny butik i Liljeholmen den 23 juli! <br> Välkommen in till oss, första veckan har vi extra bra erbjudanden för våra trogna kunder. <br> Passa på att bli kund hos oss redan nu, registrera dig här till vänster.
-            </p>
+                </p>
+                <h3>Erbjudande!</h3>
+                <p class="main-text">Till alla våra trogna kunder, som är medlemmar: Till och med 31 augusti kan ni köpa tre produkter och betala för två (den billigaste produkten på köpet). Erbjudandet gäller endast i Liljeholmen. Varmt välkomna!</p>
+            </div>
+            <div id="login-admin-container">
+                <form id="login-admin" method="POST">
+                <label for="admin_name">Användarnamn (admin)</label><br>
+                <input type="text" id="admin_name" name="admin_name">
+                <br>
+                <label for="admin_password">Lösenord</label><br>
+                <input type="password" id="admin_password" name="admin_password">
+                <br>           
+                <input type="submit" id="login-admin-btn" value="Logga in">
+                </form>
+            </div>
 
-        </div>
-        <div id="login-admin-container">
-            <form id="login-admin" method="POST">
-            <label for="admin_name">Användarnamn (admin)</label><br>
-            <input type="text" id="admin_name" name="admin_name">
-            <br>
-            <label for="admin_password">Lösenord</label><br>
-            <input type="password" id="admin_password" name="admin_password">
-            <br>           
-            <input type="submit" id="login-admin-btn" value="Logga in">
-            </form>
-        </div>
+            <div id="create-admin-container">
+                <form id="create-admin" method="POST">
+                <label for="new_admin_name">Välj användarnamn (admin)</label><br>
+                <input type="text" id="new_admin_name" name="new_admin_name">
+                <br>
+                <label for="new_admin_password">Välj lösenord</label><br>
+                <input type="password" id="new_admin_password" name="new_admin_password">
+                <br>           
+                <input type="submit" id="create-admin-btn" value="Skapa admin">
+                </form>
+            </div>
 
-        <div id="login-customer-container">
-            <form id="login-customer" method="POST">
-            <label for="username">Användarnamn</label><br>
-            <input type="text" id="username" name="username">
-            <br>
-            <label for="password">Lösenord</label><br>
-            <input type="password" id="password" name="password">
-            <br>           
-            <input type="submit" id="login-customer-btn" value="Logga in">
-            </form>
+            <div id="login-customer-container">
+                <form id="login-customer" method="POST">
+                <label for="username">Användarnamn</label><br>
+                <input type="text" id="username" name="username">
+                <br>
+                <label for="password">Lösenord</label><br>
+                <input type="password" id="password" name="password">
+                <br>           
+                <input type="submit" id="login-customer-btn" value="Logga in">
+                </form>
+            </div>
+
+            <div id="create-customer-container">
+                <form id="create-customer" method="POST">
+                <label for="new_username">Välj användarnamn</label><br>
+                <input type="text" id="new_username" name="new_username">
+                <br>
+                <label for="new_password">Välj lösenord</label><br>
+                <input type="password" id="new_password" name="new_password">
+                <br>           
+                <input type="submit" id="create-customer-btn" value="Skapa användare">
+                </form>
+            </div>
+            <h3 id="message"></h3>
         </div>
-       <h3 id="message"></h3>
     </div>
-</div>
-<div class="footer">
-    <div class="footer-list">
-        <p>Kontakt</p>
-        <p>Om oss</p>
-        <p>Samarbeten</p>
+    <div class="footer">
+        <div class="footer-list">
+            <a href="/contact.html"><p>Kontakt</p></a>
+            <a href="/about.html"><p>Om oss</p></a>
+            <a href="#"><p>Samarbeten</p></a>
+        </div>
     </div>
-</div>
     
 </body>
 </html>
