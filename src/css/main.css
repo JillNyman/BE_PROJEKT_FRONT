@@ -2,6 +2,7 @@ body {
     background-color: #f0e4e5;
     color: #747e77;
     font-family: 'playfair display';
+    box-sizing: border-box;
 }
 
 .header{
@@ -73,17 +74,17 @@ ul.breadcrumb li a:visited{
 
 .main-area{
     width: 90%;
-    display: flex;
-    flex-direction: row;
+    display: block;
+    /*flex-direction: row;*/
     margin: auto;
     
 }
 
 
 .container{
-    width: 65%;
+    width: 90%;
     border: 8px double #e4c5bb ;
-    margin-left: 4%;
+    margin: auto;
     padding: 20px;
     color: #747e77;
     font-weight: 500;
@@ -97,6 +98,7 @@ ul.breadcrumb li a:visited{
 }
 
 .admin-area{
+    width: 65%;
     border: 8px double #e4c5bb;
     padding: 15px;
 }
@@ -131,7 +133,7 @@ ul.breadcrumb li a:visited{
 }
 
 /*INDEX, side menu*/
-#show-customer-login:hover, #show-admin-login:hover, #create-admin-login:hover, #create-customer-login:hover{
+#show-admin-login:hover, #create-admin-login:hover{
     cursor: pointer;
 }
 /*
@@ -140,38 +142,44 @@ ul.breadcrumb li a:visited{
 }*/
 
 .side-menu{
-    width: 30%;
+    display: inline-flex;
+    width: 90%;
     height: auto;
     color: #747e77;
     border: 8px double #e4c5bb;
-    padding: 30px 2%;
-    margin: auto 2% auto auto;
+    padding: 10px 2%;
+    margin: 2% auto;
     text-align: center;
-    align-items: center;
+    
 }
 
 
 /*LÄNKAR*/
 .side-menu a{    
-    border: 8px double #e4c5bb;
+    display: inline-flex;
+    flex-wrap: wrap;
+    border: 4px double #e4c5bb;
     padding: 5px 15px;
-    margin: 15px auto;
-    line-height: 3.5;   
+    margin: 5px auto;
+    line-height: 1;   
+    color: #747e77;
 }
 
 .side-menu a:hover{
     background-color: #e4c5bb;
-    border: 8px double #f0e4e5;
-    font-weight: 700;
+    border: 4px double #f0e4e5;
+   
 }
 
 .side-menu a:visited{
-    color: #747e77;
+    color: #97a49b;
 }
 /*LÄNKAR SLUT*/
 /*GÖRA INFÄLLNING AV MENY ISTÄLLET?*/
 
 .footer {
+    display: flex;
+    flex-direction: row;
     border-top: 8px double #c9d2cd;
     border-bottom: 8px double #c9d2cd;
     margin: 20px 20px 10px 20px;
@@ -180,16 +188,21 @@ ul.breadcrumb li a:visited{
 
 .footer-list a:visited{
     color: #747e77;
+    margin-right: 30px;
 }
 
 
 
 @media screen and (max-width: 599px) {
     .main-area{
-        width: 100%;
+        width: 95%;
         display: flex;
         flex-direction: column;
         
+    }
+    .admin-area{
+        width: 92%;
+
     }
 
     .side-menu{       
@@ -202,12 +215,12 @@ ul.breadcrumb li a:visited{
     
     .side-menu a{ 
         border: 4px double #e4c5bb;        
-        padding: 5px 35%;
+        padding: 5px 15%;
         margin: 20px auto;
     }  
 
     .container{
-        width: 78%;
+        width: 95%;
         display: block;
         border: 8px double #e4c5bb ;
         border-style: none solid;
@@ -232,9 +245,46 @@ ul.breadcrumb li a:visited{
     font-weight: 700;
 }
 
-.menu-img img{
-    opacity: 0.4;
+.menu-img {
+    width: 100%;
+    display: inline-flex;
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*opacity: 0.4;*/
 }
+
+.menu-img img{
+    width: 50%;
+}
+
+.order-btn{
+    
+    font-weight: 1800;
+    font-size: 72px;
+    text-decoration: none;
+    color: #747e77;
+    border: 4px double #747e77;
+    border-radius: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin: 15% 25%;
+}
+
+.btn-container{
+    width: 50%;
+}
+
+.order-btn:hover{
+    background-color: #97a49b;
+    border-color: #e4c5bb;
+    color: #e4c5bb;
+}
+
+.order-btn:visited{
+    color: #97a49b;
+}
+
+
 
 .user-logged-in{
     border: 8px double #c9d2cd    ;
@@ -246,6 +296,7 @@ ul.breadcrumb li a:visited{
     display: flex;
     flex-direction: column;
     color: #747e77;
+    width: 100%;
 }
 
 .admin-tasks p{
@@ -256,7 +307,7 @@ ul.breadcrumb li a:visited{
     margin-top: 5px;
     line-height: 2;
     color: #747e77;
-    width: 70%;
+    
     display: block;
     align-items: center;
 }
@@ -278,11 +329,13 @@ ul.breadcrumb li a:visited{
 
 tr{
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-#add-btn, .deleteBtn, .editBtn, .orderBtn{
+#add-btn, .deleteBtn, .editBtn {
    /* margin-top: 45px;*/
     margin-bottom: 15px;
+    margin-right: 15px;
     line-height: 2;
     color: #747e77;
     /*width: 70%;
@@ -370,11 +423,13 @@ input[type=submit]:hover{
 
 
 
-.list-line{
-    width: 450%;
-    border-top: 1px solid #97a49b;
-    padding: 10px;
-    margin: 10px;
+tr .list-line{
+    width: 100%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #97a49b;
+    padding: 20px;
+    margin: 20px;
 }
 
 #message{
@@ -399,8 +454,141 @@ input[type=submit]:hover{
     display: none;
 }
 
+#cakes-pies, #cookies-buns, #good-things{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+}
+
 .product-frame{
+    width: 40%;
     border: 8px double #c9d2cd;
     padding: 10px;
     margin: 10px;
 }
+
+.product-frame h3, .product-frame h4{
+    width: 100%;
+}
+
+.product-frame button p{
+   width: 90%;
+}
+
+.prod-img{
+    width: 90%;
+}
+
+
+.orderBtn{
+     /* margin-top: 45px;*/
+     margin: auto auto 15px auto;     
+     color: #747e77;
+     width: 80%;
+     display: block;
+     text-align: center;
+     background-color: #f0e4e5 ;
+     border: 4px double #c9d2cd;
+     font-family: 'playfair display';
+     padding: 10px;
+}
+
+.product-img{
+    width: 250px;
+    height: auto;
+  }
+
+@media screen and (max-width: 599px) {
+    
+#cakes-pies{
+    display: flex;
+    flex-wrap: column;
+    width: 100%;
+    margin: auto;
+}
+    .product-frame{
+        width: 100%;
+        border: 8px double #c9d2cd;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .orderBtn{
+        /* margin-top: 45px;*/
+        margin: auto auto 15px auto;     
+        color: #747e77;
+        width: 90%;
+        
+        background-color: #f0e4e5 ;
+        border: 4px double #c9d2cd;
+        
+   }
+
+   .prod-img{
+    width: 200%;
+}
+.product-img{
+    width: 50%;
+    height: auto;
+  }
+
+}
+
+/*Admin alertbox*/
+.admin-alert-box{
+    display: none;
+    position: fixed;
+    z-index: 11;
+    width: 30%;
+    left: 35%;
+    right: 35%;
+    top: 25%;
+    background-color: #e4c5bb;
+}
+
+ /* Basic styles for the modal */
+ .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+  }
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  #add-product-link:hover{
+    cursor: pointer;
+  }
+
+ 
+
+  .product-name{
+    border-top: 2px solid #97a49b;
+    padding-top: 15px;
+  }
+
+  

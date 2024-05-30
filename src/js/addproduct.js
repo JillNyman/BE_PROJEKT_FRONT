@@ -1,7 +1,7 @@
 "use strict";
+//Admin-sida där användare kan lägga till produkter
 
 //Lägg till produkt i adminvyn FUNKAR
-
 const inputCategory = document.getElementById("item-category");
 const inputName = document.getElementById("item-name");
 const inputDescription = document.getElementById("item-description");
@@ -21,7 +21,8 @@ async function addProduct(e) {
         prod_price: inputPrice.value
     };
 
-    const response = await fetch('http://localhost:3334/menu', {
+    try{
+    const response = await fetch('http://localhost:3334/api/menu/menu', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
@@ -30,8 +31,19 @@ async function addProduct(e) {
     });
 
     let data = await response.json();
-    postMessageEl.innerHTML = `Produkten <i>${product.prod_name}</i> har lagts till!`;
-    return data;
+    if(!response.ok){
+        postMessageEl.innerHTML = "Produkten kunde inte läggas till";
+        return;
+    }
+
+    if(response.status === 200){
+        postMessageEl.innerHTML = `Produkten <i>${product.prod_name}</i> har lagts till!`;
+        return data;
     //console.log(data);
+    }
+} catch (error) {
+    console.error("Error: ", error);
+    postMessageEl.innerHTML = "Databasen tog inte emot posten.";
+}
 }
 

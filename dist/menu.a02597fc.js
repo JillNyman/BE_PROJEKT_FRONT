@@ -142,14 +142,14 @@
       this[globalName] = mainExports;
     }
   }
-})({"cJKQ7":[function(require,module,exports) {
+})({"exoUi":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
 var HMR_USE_SSE = false;
-module.bundle.HMR_BUNDLE_ID = "3ff4dc425aeefffe";
+module.bundle.HMR_BUNDLE_ID = "b2354a4ca02597fc";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, HMR_USE_SSE, chrome, browser, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -583,49 +583,8 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
     });
 }
 
-},{}],"iG7HF":[function(require,module,exports) {
-"use strict";
-let cakePieEl = document.getElementById("cakes-pies");
-getCakes();
-//Hämta lista på produkter
-async function getCakes() {
-    //e.preventDefault();
-    const response = await fetch("http://localhost:3334/api/menu", {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json"
-        }
-    });
-    let data = await response.json();
-    console.table(data);
-    makeCakeList(data);
-}
-//Skriv ut listan
-function makeCakeList(data) {
-    data.forEach((dat)=>{
-        if (dat.prod_category === "t\xe5rta" || dat.prod_category === "paj") {
-            let newEl = document.createElement("div");
-            newEl.className = "product-frame";
-            newEl.innerHTML = `
-        <h3>${dat.prod_name}</h3>            
-        <h4>${dat.prod_price} </h4>
-        <div class="prod-img">
-          
-        <img class="product-img" src="./css/images/${dat.prod_id}.jpg"/>  </div>
-       
-        <p>${dat.prod_description} </p>    
-            `;
-            let orderBtn = document.createElement("button");
-            orderBtn.textContent = "Best\xe4ll";
-            orderBtn.id = dat.prod_id;
-            orderBtn.className = "orderBtn";
-            orderBtn.addEventListener("click", ()=>orderProduct(dat.prod_id));
-            newEl.appendChild(orderBtn);
-            cakePieEl.appendChild(newEl);
-        }
-    });
-}
+},{}],"19Kgq":[function(require,module,exports) {
 
-},{}]},["cJKQ7","iG7HF"], "iG7HF", "parcelRequirebfd0")
+},{}]},["exoUi","19Kgq"], "19Kgq", "parcelRequirebfd0")
 
-//# sourceMappingURL=cakespies.5aeefffe.js.map
+//# sourceMappingURL=menu.a02597fc.js.map

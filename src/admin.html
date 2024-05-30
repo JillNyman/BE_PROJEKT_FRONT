@@ -18,30 +18,38 @@
         <h1>Admin Start</h1>
     </div>
     <div class="main-area">
-        <div class="side-menu">
+        <div class="side-menu">    
+            <a href="index.html">Startsida</a>
+            <a id="add-product-link"><h4>Lägg till produkt</h4></a>               
+            <a href="inbox.html">Kundmeddelanden</a>
+            <a href="#">Övrig information</a>
+        </div>    
+        <div class="admin-area" id="admin-area">
+            <h3>Produktlista</h3>
+            <div id="product-list"></div>
+            <div id="admin-alert-box"           class="admin-alert-box">
+                <div class="admin-alert-content">
+                    <span class="close">&times;</span>
+                    <p id="admin-alert-msg"></p>
+                </div>
+            </div>
             <p>Administratör</p>
             <p>Inloggad som: Jill</p>
-            <div class="admin-tasks">
-                <a href="#">Startsida</a>
-                <a href="menu.html">Kundens meny-vy</a>
-                <a href="addproduct.html">Lägg till produkt</a>               
-                <a href="inbox.html">Meddelanden från kunder</a>
-                <a href="#">Övrig information</a>
-            </div>
-        </div>     
-        <div class="admin-area">
-            <h3>Produktlista</h3>
-            <table class="product-list" id="product-list">
-                <thead>
-                <tr id="table-header">
-                    <th>Artikelnummer/<br>Kategori</th>
-                    <th>Produktnamn</th>
-                    <th>Pris</th>
-                    <th>Beskrivning</th>           
-                </tr>      
-                </thead>
-            </table>
         </div>
+
+        <!-- Modal för uppdatera-->
+  <div id="update-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <form id="update-form">
+        <input type="text" id="prod-name" placeholder="Enter new name" required>
+        <input type="text" id="prod-category" placeholder="Enter new name" required>
+        <input type="text" id="prod-price" placeholder="Enter new name" required>
+        <input type="text" id="prod-description" placeholder="Enter new name" required>
+        <button id="submit-update" type="submit">Update</button>
+      </form>
+    </div>
+  </div>
     </div>
 
     <div class="footer">

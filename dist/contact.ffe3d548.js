@@ -142,14 +142,14 @@
       this[globalName] = mainExports;
     }
   }
-})({"cJKQ7":[function(require,module,exports) {
+})({"6FwQO":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
 var HMR_USE_SSE = false;
-module.bundle.HMR_BUNDLE_ID = "3ff4dc425aeefffe";
+module.bundle.HMR_BUNDLE_ID = "167346a9ffe3d548";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, HMR_USE_SSE, chrome, browser, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -583,49 +583,49 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
     });
 }
 
-},{}],"iG7HF":[function(require,module,exports) {
+},{}],"3C9CX":[function(require,module,exports) {
 "use strict";
-let cakePieEl = document.getElementById("cakes-pies");
-getCakes();
-//Hämta lista på produkter
-async function getCakes() {
-    //e.preventDefault();
-    const response = await fetch("http://localhost:3334/api/menu", {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json"
+const inputSender = document.getElementById("sender");
+const inputEmail = document.getElementById("email");
+const inputPhone = document.getElementById("phone");
+const inputMessage = document.getElementById("customer-message");
+const sendBtn = document.getElementById("send-btn");
+const customerMsg = document.getElementById("customer-msg");
+sendBtn.addEventListener("click", sendMessage, false);
+async function sendMessage(e) {
+    e.preventDefault();
+    let customerInput = {
+        sender_name: inputSender.value,
+        sender_email: inputEmail.value,
+        sender_number: inputPhone.value,
+        sender_message: inputMessage.value
+    };
+    try {
+        const response = await fetch("http://localhost:3334/api/contact", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(customerInput)
+        });
+        if (!response.ok) {
+            console.log("N\xe5got gick fel");
+            return;
         }
-    });
-    let data = await response.json();
-    console.table(data);
-    makeCakeList(data);
-}
-//Skriv ut listan
-function makeCakeList(data) {
-    data.forEach((dat)=>{
-        if (dat.prod_category === "t\xe5rta" || dat.prod_category === "paj") {
-            let newEl = document.createElement("div");
-            newEl.className = "product-frame";
-            newEl.innerHTML = `
-        <h3>${dat.prod_name}</h3>            
-        <h4>${dat.prod_price} </h4>
-        <div class="prod-img">
-          
-        <img class="product-img" src="./css/images/${dat.prod_id}.jpg"/>  </div>
-       
-        <p>${dat.prod_description} </p>    
-            `;
-            let orderBtn = document.createElement("button");
-            orderBtn.textContent = "Best\xe4ll";
-            orderBtn.id = dat.prod_id;
-            orderBtn.className = "orderBtn";
-            orderBtn.addEventListener("click", ()=>orderProduct(dat.prod_id));
-            newEl.appendChild(orderBtn);
-            cakePieEl.appendChild(newEl);
-        }
-    });
+        let data = await response.json();
+        //customerMsg.innerHTML = "Tack! Ditt meddelande har skickats!";
+        alert("Tack! Ditt meddelande har skickats!");
+        inputSender.value = "";
+        inputEmail.value = "";
+        inputPhone.value = "";
+        inputMessage.value = "";
+        return data;
+    } catch (error) {
+        console.error("Error: ", error);
+        customerMsg.innerHTML = "Meddelandet skickades inte. F\xf6rs\xf6k igen!";
+    }
 }
 
-},{}]},["cJKQ7","iG7HF"], "iG7HF", "parcelRequirebfd0")
+},{}]},["6FwQO","3C9CX"], "3C9CX", "parcelRequirebfd0")
 
-//# sourceMappingURL=cakespies.5aeefffe.js.map
+//# sourceMappingURL=contact.ffe3d548.js.map

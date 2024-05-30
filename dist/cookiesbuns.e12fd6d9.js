@@ -609,13 +609,16 @@ function makeCookieList(data) {
             newEl.innerHTML = `
         <h3>${dat.prod_name}</h3>            
         <h4>${dat.prod_price} </h4>
-        <p>${dat.prod_description} </p>       
+        <div class="prod-img">
+        <img class="product-img" src="./css/images/${dat.prod_id}.jpg"/>  </div>
+        <p>${dat.prod_description} </p>   
+            
             `;
             let orderBtn = document.createElement("button");
             orderBtn.textContent = "Best\xe4ll";
             orderBtn.id = dat.prod_id;
             orderBtn.className = "orderBtn";
-            orderBtn.addEventListener("click", ()=>deletePost(dat.prod_id));
+            orderBtn.addEventListener("click", ()=>orderProduct(dat.prod_id));
             newEl.appendChild(orderBtn);
             cookiesEl.appendChild(newEl);
         }

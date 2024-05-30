@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<script src="/contact.ffe3d548.js" defer=""></script>
 </head>
 <body>
     <div class="header">
@@ -23,16 +24,16 @@
         </ul>
     </div>
     <div class="main-area">
-        <div class="side-menu">    
-            <a href="/index.html">Logga ut</a>
-            <p>Administratör</p>
-            <a href="/index.html">Logga in</a> <br> 
-            <a href="/menu.html">Meny</a>
-            <a href="/about.html">Om <i>Bageriet</i></a>  
+        <div class="side-menu">
+            <a href="/cakespies.html">Tårtor & Pajer</a>
+            <a href="/cookiesbuns.html">Bullar & Kakor</a>
+            <a href="/allgoodthings.html">Smått & Gott</a>   
+            <a href="/contact.html">Kontakta oss</a>  
         </div>
 
         <div class="container">
-            <h3>I det här området händer det saker.</h3>
+            <h3>Vi ser fram emot att höra från dig!</h3>
+            <p id="customer-msg"></p>
             <form id="contact-form" method="POST">
                 <label for="sender">Namn</label><br>
                 <input type="text" id="sender" name="sender">
@@ -43,8 +44,8 @@
                 <label for="phone">Telefonnummer</label><br>
                 <input type="text" id="phone" name="phone">
                 <br>
-                <label for="message">Meddelande</label><br>
-                <input type="text" id="message" name="message">
+                <label for="customer-message">Meddelande</label><br>
+                <input type="text" rowspan="4" id="customer-message" name="customer-message">
                 <br>           
                 <input type="submit" id="send-btn" value="Skicka!">
 
@@ -53,12 +54,16 @@
     </div>
     <div class="footer">
         <div class="footer-list">
-            <p>Kontakt</p>
-            <p>Om oss</p>
-            <p>Samarbeten</p>
+            <a href="/contact.html"><p>Kontakt</p></a>
+            <a href="/about.html"><p>Om oss</p></a>
+            <p>Copyright 2024 Jill Nyman</p>
+        </div>
+        <div class="btn-smallscreen">
+            <a id="show-admin-login">Logga in</a><br>
+            <a id="create-admin-login">Skapa admin</a>
         </div>
     </div>
     
     
-<script src="/contact.d25830f9.js"></script></body>
+</body>
 </html>
