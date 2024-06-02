@@ -610,7 +610,7 @@ function makeGoodList(data) {
         <h3>${dat.prod_name}</h3>            
         <h4>${dat.prod_price} </h4>
         <div class="prod-img">
-        <img class="product-img" src="./css/images/${dat.prod_id}.jpg"/>  </div>
+        <img src="./src/css/images/${dat.prod_id}.jpg" class="product-img" />  </div>
         <p>${dat.prod_description} </p>    
           
             `;

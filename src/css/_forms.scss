@@ -1,0 +1,43 @@
+//Formulär-relaterad styling
+
+form{
+    text-align: left;
+}
+
+input[type=text], input[type=password]{
+    width: 90%;
+    border: 4px double #e4c5bb;
+    margin: 10px 0;
+    padding: 7px 10px;
+    background-color: #f4eeee;
+    color: #747e77;
+    font-family: 'playfair display';
+    font-weight: 600;
+    outline: #e4c5bb;
+}
+
+input[type=submit]{
+    background-color: #f0e4e5;
+    border: 4px double #e4c5bb;
+    width: 50%;
+    color: #747e77;
+    font-family: 'playfair display';
+    font-weight: 600;
+    padding: 7px 10px;
+}
+
+input[type=submit]:hover{
+    background-color: #e4c5bb;
+    border: 4px double #f0e4e5;
+    font-weight: 800;
+}
+
+#send-btn{
+    width: 90%;
+    display: block;
+    margin: 20px auto;
+}
+
+@media screen and (max-width: 599px){
+  
+}

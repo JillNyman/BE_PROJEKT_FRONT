@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Startsida för alla</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.scss">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
@@ -14,41 +14,51 @@
     <script src="js/main.js" type="module" ></script>
 </head>
 <body>
-    <div class="header">
-        <h1>Välkommen till bageriet</h1>
-    </div>
+    <section class="parallax-container">
+  
+    
+    </section>
+
+    <section class="buffer">
+       
+            <h1>Välkommen till bageriet</h1>
+            <p>Vi serverar <b>hembakade tårtor, kakor och annat sött</b> gjort på väl utvalda råvaror i en mysig miljö dit man vill återvända om och om igen.</p>
+        
+    </section>
+
+    <section class="parallax-container parallax-container2">
     <div class="main-area">
-        <div class="side-menu">
+        <!--<div class="side-menu">
             <a href="cakespies.html">Tårtor & Pajer</a>
             <a href="cookiesbuns.html">Bullar & Kakor</a>
             <a href="allgoodthings.html">Smått & Gott</a>   
             <a href="contact.html">Kontakta oss</a>  
-        </div>
+        </div>-->
         <div class="container">        
             <div id="index-area">
                 <h2>Sortiment</h2>
-            <a href="cakespies.html"> <h3 class="header-item-group">Tårtor & Pajer</h3></a>
+            
             <div class="menu-img">
                 <img src="./css/IMAGES/flowercake.jpg" alt="flowercake">              
                 <div class="btn-container">
-                    <a href="#" class="order-btn">&#43;</a>
+                    <a href="cakespies.html"> <h3 class="header-item-group">Tårtor & Pajer</h3></a>
+                    <a href="#" class="order-btn"></a>
                 </div>
             </div>
-            <a href="cookiesbuns.html"><h3 class="header-item-group">Kakor & Bullar</h3></a>
-            <div class="btn-container">
-                <a href="#" class="order-btn">&#43;</a>
-            </div>
+          
             <div class="menu-img">
-                <img src="./css/IMAGES/pinkcake.jpg" alt="pinkcake">
-             
-              
+                <img src="./css/IMAGES/buns_index.jpg" alt="bild på bullar">
+                <div class="btn-container">
+                    <a href="cookiesbuns.html"><h3 class="header-item-group">Kakor & Bullar</h3></a>
+                    <a href="#" class="order-btn"></a>
+                </div>  
             </div>
-            <a href="allgoodthings.html"><h3 class="header-item-group">Smått & Gott</h3></a>
+
             <div class="menu-img">
                 <img src="./css/IMAGES/25.jpg" alt="macarons">
-              
                 <div class="btn-container">
-                    <a href="#" class="order-btn">&#43;</a>
+                    <a href="allgoodthings.html"><h3 class="header-item-group">Smått & Gott</h3></a>   
+                    <a href="#" class="order-btn"></a>
                 </div>
             </div>
             <div class="container-extra">
@@ -57,13 +67,18 @@
                 <p>För information om innehåll i specifik produkt, vänligen <a href="contact.html">kontakta</a> oss. </p>
                 
             </div>
+            <div class="container-extra">
+            <h3>Nyheter</h3>
                 <p class="main-text">
                 Vi öppnar en ny butik i Liljeholmen den 23 juli! <br> Välkommen in till oss, första veckan har vi extra bra erbjudanden för våra trogna kunder. <br> Passa på att bli kund hos oss redan nu, registrera dig här till vänster.
                 </p>
+            </div>
+            <div class="container-extra">
                 <h3>Erbjudande!</h3>
                 <p class="main-text">Till alla våra trogna kunder, som är medlemmar: Till och med 31 augusti kan ni köpa tre produkter och betala för två (den billigaste produkten på köpet). Erbjudandet gäller endast i Liljeholmen. Varmt välkomna!</p>
             </div>
-            <div id="login-admin-container">
+            </div>
+        <div id="login-admin-container">
                 <form id="login-admin" method="POST">
                 <label for="admin_name">Användarnamn (admin)</label><br>
                 <input type="text" id="admin_name" name="admin_name">
@@ -89,6 +104,7 @@
             <h3 id="message"></h3>
         </div>
     </div>
+</section>
     <div class="footer">
         <div class="footer-list">
             <a href="contact.html"><p>Kontakt</p></a>
@@ -99,7 +115,7 @@
             <a id="show-admin-login">Logga in</a><br>
             <a id="create-admin-login">Skapa admin</a>
         </div>
-    </div>
     
+</div>
 </body>
 </html>

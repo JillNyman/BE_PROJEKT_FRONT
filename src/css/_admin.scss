@@ -1,0 +1,89 @@
+//Styling specifikt för admin-element 
+
+/*INDEX, side menu*/
+#show-admin-login:hover, #create-admin-login:hover{
+  cursor: pointer;
+}
+
+//Admins lista över produkter
+.product-name{
+  border-top: 2px solid #97a49b;
+  padding-top: 15px;
+}
+
+/*INDEX, main area*/
+#login-admin-container{
+  border: 8px double #dfa0c9;
+  padding: 20px;
+  display: none;
+}
+
+#create-admin-container{
+  border: 8px double #e4c5bb;
+  padding: 20px;
+  display: none;
+}
+
+//Inlogg-meddelande
+#message{
+  height: 150px;
+  resize: none;
+}
+
+/*Admin alertbox*/
+.admin-alert-box{
+    display: none;
+    position: fixed;
+    z-index: 11;
+    width: 30%;
+    left: 35%;
+    right: 35%;
+    top: 25%;
+    background-color: #e4c5bb;
+}
+
+ /* Basic styles for the modal */
+ .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+  }
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  #add-product-link:hover{
+    cursor: pointer;
+  }
+
+  
+#menu-item-form label, #menu-item-form input{
+  margin: 10px;
+}
+
+@media screen and (max-width: 599px){
+  
+}

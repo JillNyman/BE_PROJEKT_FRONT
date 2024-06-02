@@ -1,0 +1,179 @@
+
+
+/* FIXA SÅ KNAPPARNA ÄR PÅ RAD
+.deleteBtn, .editBtn{
+    display:
+}*/
+
+/*LÄNKAR*/
+.side-menu a{    
+    display: inline-flex;
+    flex-wrap: wrap;
+    border: 4px double #e4c5bb;
+    padding: 5px 15px;
+    margin: 5px auto;
+    line-height: 1;   
+    color: #747e77;
+}
+
+.side-menu a:hover{
+    background-color: #e4c5bb;
+    border: 4px double #f0e4e5;
+   
+}
+
+.side-menu a:visited{
+    color: #97a49b;
+}
+
+/*MENU*/
+.header-item-group{
+    font-family: 'Petit Formal Script';
+    border-bottom: 6px double #c9d2cd ;
+}
+.header-item-group h3:visited{
+    color: #747e77;
+    text-decoration: none;
+}
+
+.header-item-group a:hover{
+    font-weight: 700;
+}
+
+
+.order-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+
+    //font-weight: 1800;
+    font-size: 72px;
+    text-decoration: none;
+    color: #747e77;
+    border: 4px double #747e77;
+    border-radius: 50%;
+    //padding-left: 25px;
+    //padding-right: 25px;
+    margin: auto 5% auto auto;
+
+    transition: width 0.6s, height 0.6s, font-size 0.6s; //ändra typ!!!
+
+    &:hover{
+        width: 100px;
+        height: 100px;
+        //padding: 0 15px;
+        border-radius: 50%;
+        font-size: large;
+        content: "beställ";
+        background-color: #97a49b;
+        border-color: #e4c5bb;
+        color: #e4c5bb;
+    }
+
+    &:hover::after{
+        content: "beställ";
+    }
+
+    &::after{
+        content: "+";
+    }
+
+    &:visited{        
+        color: #97a49b;        
+    }
+}
+
+.btn-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(240, 228, 229, 0.4) ;
+}
+
+.admin-tasks a{
+    margin-top: 5px;
+    line-height: 2;
+    color: #747e77;
+    
+    display: block;
+    align-items: center;
+}
+
+.admin-tasks a:hover{
+    background-color: #e4c5bb;
+    border: 8px double #f0e4e5;
+    font-weight: 800;
+
+}
+
+.admin-tasks a:visited{
+    color: #747e77;
+}
+
+#add-btn, .deleteBtn, .editBtn {
+    /* margin-top: 45px;*/
+     margin-bottom: 15px;
+     margin-right: 15px;
+     line-height: 2;
+     color: #747e77;
+     /*width: 70%;
+     display: block;*/
+     text-align: center;
+     background-color: #f0e4e5 ;
+     border: 4px double #97a49b;
+     font-family: 'playfair display';
+     padding: 5px;
+ }
+ 
+ #add-btn:hover {
+     background-color: #e4c5bb;
+     border: 4px double #f0e4e5;
+     font-weight: 800;
+ }
+ 
+ .deleteBtn:hover, .editBtn:hover, .orderBtn:hover{
+     background-color: #e4c5bb;
+     border: 4px double #f0e4e5;
+     font-weight: 600;
+ }
+
+ 
+.orderBtn{
+    /* margin-top: 45px;*/
+    margin: auto auto 15px auto;     
+    color: #747e77;
+    width: 80%;
+    display: block;
+    text-align: center;
+    background-color: #f0e4e5 ;
+    border: 4px double #c9d2cd;
+    font-family: 'playfair display';
+    padding: 10px;
+}
+
+.container a{
+    //background-color: rgba(240, 228, 229, 0.8);
+}
+
+@media screen and (max-width: 599px) {  
+    .side-menu a{ 
+    border: 4px double #e4c5bb;        
+    padding: 5px 15%;
+    margin: 20px auto;
+    }   
+
+    .side-menu a{ 
+        border: 4px double #e4c5bb;        
+        padding: 5px 15%;
+        margin: 20px auto;
+    }  
+    
+}

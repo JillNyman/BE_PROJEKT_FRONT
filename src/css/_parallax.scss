@@ -1,0 +1,244 @@
+//$parallax-height: 100vh;
+//$layer1-bg: url('./IMAGES/beskuren_index.jpg');
+//$layer2-bg: url('./IMAGES/parallax.jpg');
+//$layer3-bg: url('./IMAGES/parallax.jpg');
+
+.parallax-container{
+    display: flex;
+    min-height: 50vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    /*  this is where the magic happens:  */
+    background-attachment: fixed;
+  
+    background-image: url('./IMAGES/parallax_0.8.jpg');    
+    background-position: center;
+    background-size: cover;
+    color: var(--color);
+    row-gap: 4rem;
+  
+    text-align: center;
+}
+
+.parallax-container-two{
+  display: flex;
+    min-height: 50vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    /*  this is where the magic happens:  */
+    background-attachment: fixed;
+  
+    background-image: url('./IMAGES/parallax_cakepops_0.6.jpg');    
+    background-position: center;
+    background-size: cover;
+    color: var(--color);
+    row-gap: 4rem;
+  
+    text-align: center;
+}
+
+.parallax-container-three{
+  display: flex;
+    min-height: 50vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    /*  this is where the magic happens:  */
+    background-attachment: fixed;
+  
+    background-image: url('./IMAGES/parallax_tarta_0.6.jpg');    
+    background-position: center;
+    background-size: cover;
+    color: var(--color);
+    row-gap: 4rem;
+  
+    text-align: center;
+}
+
+.parallax-container-three{
+  display: flex;
+    min-height: 50vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    /*  this is where the magic happens:  */
+    background-attachment: fixed;
+  
+    background-image: url('./images/parallax_cookies_0.8.jpg');    
+    background-position: center;
+    background-size: cover;
+    color: var(--color);
+    row-gap: 4rem;
+  
+    text-align: center;
+}
+
+.parallax-container-four{
+  display: flex;
+    min-height: 50vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    /*  this is where the magic happens:  */
+    background-attachment: fixed;
+  
+    background-image: url('./images/parallax_restaurant.jpg');    
+    background-position: center;
+    background-size: cover;
+    color: var(--color);
+    row-gap: 4rem;
+  
+    text-align: center;
+}
+
+.parallax-container-five{
+  display: flex;
+    min-height: 50vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    /*  this is where the magic happens:  */
+    background-attachment: fixed;
+  
+    background-image: url('./images/parallax_coffe.jpg');    
+    background-position: center;
+    background-size: cover;
+    color: var(--color);
+    row-gap: 4rem;
+  
+    text-align: center;
+}
+
+.buffer {
+    width: 100%;
+    min-height: 40vh;
+    background-color: #f0e4e5;   
+    z-index: 1;
+    display: block;
+    text-align: center center;    
+    border-top: 8px double #c9d2cd;
+    border-bottom: 8px double #c9d2cd;
+    font-family: 'Petit Formal Script';
+    font-size: larger;
+    font-weight: 800;
+  }
+
+  .buffer h1{
+    width: auto;
+    margin: 60px auto;
+    text-align: center;
+  }
+
+  .buffer p{
+    width: 70%;
+    margin: auto auto 40px auto;
+  }
+
+  .header{
+    
+   
+
+}
+
+/*.buffer:before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url("IMAGES/header_beskuren.jpg") center center; 
+    opacity: .4;
+}*/
+  
+  .parallax-container2 {
+    flex-direction: row;
+    flex-wrap: wrap;  
+    padding: 6rem 0;
+    background-image: url('./IMAGES/parallax_0.6.jpg');
+    gap: 1.6em;
+  }
+
+  .parallax-container3 {
+    flex-direction: row;
+    flex-wrap: wrap;  
+    padding: 6rem 0;
+    background-image: url('./IMAGES/parallax_cakepops_0.4.jpg');
+    gap: 1.6em;
+  }
+
+  .parallax-container4 {
+    flex-direction: row;
+    flex-wrap: wrap;  
+    padding: 6rem 0;
+    background-image: url('./IMAGES/parallax_tarta_0.4.jpg');
+    gap: 1.6em;
+  }
+
+  .parallax-container5 {
+    flex-direction: row;
+    flex-wrap: wrap;  
+    padding: 6rem 0;
+    background-image: url('./images/parallax_cookies_0.8.jpg'); 
+    gap: 1.6em;
+  }
+
+  .parallax-container6 {
+    flex-direction: row;
+    flex-wrap: wrap;  
+    padding: 6rem 0;
+    background-image: url('./images/parallax_coffe.jpg'); 
+    gap: 1.6em;
+  }
+
+  .parallax-container7{
+    flex-direction: row;
+    flex-wrap: wrap;  
+    padding: 6rem 0;
+    background-image: url('./images/parallax_restaurant.jpg'); 
+    gap: 1.6em;
+  }
+
+    
+  
+/*
+.parallax {
+    position: relative;
+    height: $parallax-height;
+    overflow: hidden;
+  
+    .parallax-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: $parallax-height;
+      background-size: cover;
+      background-position: center;
+      transform: translateZ(0); // För att förhindra suddiga bakgrundsbilder
+    }
+  
+    .layer1 {
+      background-image: $layer1-bg;
+      transform: translateZ(-1px) scale(2); // Skala för att kompensera för translateZ
+    }
+
+    /*.layer2 {
+        background-image: $layer2-bg;
+        transform: translateZ(-0.5px) scale(1.5);
+      }
+    
+      .layer3 {
+        background-image: $layer3-bg;
+        transform: translateZ(0) scale(1);
+      }
+}*/

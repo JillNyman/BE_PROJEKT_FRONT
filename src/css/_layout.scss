@@ -1,0 +1,101 @@
+
+
+
+.footer {
+   
+    border-top: 8px double #c9d2cd;
+    border-bottom: 8px double #c9d2cd;
+    
+    padding: 20px;
+    background-color: #f0e4e5;
+}
+
+.footer-list a, .btn-smallscreen a{
+    //padding: 5%;
+    text-align: left;
+    width: auto;
+    margin-right: 30px;
+}
+
+
+.footer-list a:visited, .btn-smallscreen a:visited{
+    color: #747e77;
+   
+}
+
+//Menyn
+/*.side-menu{
+    display: inline-flex;
+    width: 90%;
+    height: auto;
+    color: #747e77;
+    border: 8px double #e4c5bb;
+    padding: 10px 2%;
+    margin: 2% auto;
+    text-align: center;
+    
+}*/
+
+/*BRÖDSMULOR*/
+.navigator{
+    width: 90%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    margin: 20px auto;
+    background-color: #c9d2cd;
+}
+ul.breadcrumb{
+    padding: 10px 25px;
+    list-style: none;
+    
+} 
+
+ul.breadcrumb li{
+    display: inline;
+}
+ul.breadcrumb li+li:before{
+    padding: 10px;
+    color: #747e77;
+    content: "/\00a0";
+}
+
+ul.breadcrumb li a{
+    text-decoration: none;
+}
+
+ul.breadcrumb li a:hover{
+    cursor: pointer;
+    font-weight: 700;
+}
+
+ul.breadcrumb li a:visited{
+    color: #747e77;
+}
+ li.ur-here{
+    font-weight: 700;
+ }
+/*BRÖDSMULOR SLUT*/
+
+@media screen and (max-width: 599px){
+    .side-menu{       
+        width: 90%;
+        height: auto;
+        border: 8px double #e4c5bb;
+        padding: 5px 5px;
+        margin: 20px auto;
+    }  
+}
+
+//EJ AKTUELLT
+/*ADMIN
+.admin-tasks{
+    display: flex;
+    flex-direction: column;
+    color: #747e77;
+    width: 100%;
+}
+
+.admin-tasks p{
+    margin-top: 10px;
+}*/
