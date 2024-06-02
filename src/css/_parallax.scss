@@ -131,6 +131,30 @@
     font-weight: 800;
   }
 
+  .buffer-admin{
+    width: 100%;
+    min-height: 50vh;
+    background-color: #f0e4e5;   
+    z-index: 1;
+    display: block;
+    text-align: center center;    
+    border-top: 8px double #c9d2cd;
+    border-bottom: 8px double #c9d2cd;
+    font-family: 'Petit Formal Script';    
+    font-weight: 800;
+  }
+
+  .admin-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5% 10% 2% 10%;
+  }
+  .buffer-admin h1{
+    text-align: center;
+    font-size: 64px;
+  }
+
   .buffer h1{
     width: auto;
     margin: 60px auto;
@@ -142,11 +166,7 @@
     margin: auto auto 40px auto;
   }
 
-  .header{
-    
-   
-
-}
+ 
 
 /*.buffer:before{
     content: "";

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Startsida för alla</title>
+    <title>Admin start</title>
     <link rel="stylesheet" href="css/main.scss">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,43 +14,54 @@
     <script src="js/admin.js" type="module" ></script>
 </head>
 <body>
-    <div class="header">
+    <section class="parallax-container">
+  
+    
+    </section>
+    <section class="buffer-admin">
         <h1>Admin Start</h1>
+        <div class="admin-links">
+        <a href="index.html">Startsida</a>
+        <a href="addproduct.html" class="add-btn">Lägg till</a>
+        <a href="inbox.html">Kundmeddelanden</a>
     </div>
+    </section>
+
+   <section class="parallax-container parallax-container2">
     <div class="main-area">
-        <div class="side-menu">    
-            <a href="index.html">Startsida</a>
-            <a id="add-product-link"><h4>Lägg till produkt</h4></a>               
-            <a href="inbox.html">Kundmeddelanden</a>
-            <a href="#">Övrig information</a>
-        </div>    
+           
         <div class="admin-area" id="admin-area">
             <h3>Produktlista</h3>
             <div id="product-list"></div>
-            <div id="admin-alert-box"           class="admin-alert-box">
+            <div id="admin-alert-box"                                   class="admin-alert-box">
                 <div class="admin-alert-content">
                     <span class="close">&times;</span>
                     <p id="admin-alert-msg"></p>
                 </div>
             </div>
-            <p>Administratör</p>
-            <p>Inloggad som: Jill</p>
+            
         </div>
+    </div>
+    </section>
 
         <!-- Modal för uppdatera-->
   <div id="update-modal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
       <form id="update-form">
-        <input type="text" id="prod-name" placeholder="Enter new name" required>
-        <input type="text" id="prod-category" placeholder="Enter new name" required>
-        <input type="text" id="prod-price" placeholder="Enter new name" required>
-        <input type="text" id="prod-description" placeholder="Enter new name" required>
+        <label for="prod-name">Produktens namn:</label>
+        <input type="text" id="prod-name" required><br>
+        <label for="prod-category">Kategori:</label>
+        <input type="text" id="prod-category" required><br>
+        <label for="prod-price">Pris:</label>
+        <input type="text" id="prod-price" required><br>
+        <label for="prod-description">Beskrivning:</label>
+        <input type="text" id="prod-description" required><br>
         <button id="submit-update" type="submit">Update</button>
       </form>
     </div>
   </div>
-    </div>
+
 
     <div class="footer">
         <div class="footer-list">

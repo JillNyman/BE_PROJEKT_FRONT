@@ -72,9 +72,12 @@ async function loginAdmin(e){
     console.log(data.response.token);
 
     if(response.status === 200){
-        localStorage.setItem('token', data.response.token);      
+        localStorage.setItem('token', data.response.token); 
+        let adminBtn = document.getElementById("getadmin-btn");
+
+        adminBtn.style.display = "block";
+        //return window.location.href = "http://127.0.0.1:54896/admin.html";
         
-        window.location.href = "admin.html";
     } else {
         console.log("Fel e-postadress eller lösenord");
     }

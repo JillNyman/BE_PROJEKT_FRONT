@@ -9,13 +9,13 @@ body, html {
 }
 
 
-/*.main-area{
+.main-area{
     width: 90%;
     display: block;
     flex-direction: row;
     margin: auto;
     
-}*/
+}
 
 
 .main-area {
@@ -45,6 +45,8 @@ body, html {
     width: 65%;
     border: 8px double #e4c5bb;
     padding: 15px;
+    background-color: rgba(240, 228, 229, 0.8);
+    margin: auto;
 }
 
 
@@ -92,6 +94,7 @@ body, html {
 .container-extra {
     background-color: rgba(240, 228, 229, 0.8) ;
     padding: 20px;
+    border-top: 8px double #c9d2cd  
 }
 
 .container-extra h3, .container-extra a{
@@ -117,10 +120,7 @@ body, html {
         
     }
 
-    .admin-area{
-        width: 92%;
-
-    }
+    
 
     .container{
         width: 95%;

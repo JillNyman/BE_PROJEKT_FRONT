@@ -1,6 +1,7 @@
 "use strict";
+//Kopplat till admin.html
 
-const addProdBtn = document.getElementById("add-product-link"); //Länk till "lägg till produkt"
+//const addProdBtn = document.getElementById("add-product-link"); //Länk till "lägg till produkt"
 
 const productlistEl = document.getElementById("product-list"); //produktlist
 const adminAreaEl = document.getElementById("admin-area"); 
@@ -15,17 +16,20 @@ const prodDescription = document.getElementById('prod-description');
 const updateForm = document.getElementById('update-form');
 const updateModal = document.getElementById('update-modal');
 const submitUpdate = document.getElementById('submit-update');
+const closeModal = document.getElementsByClassName('close');
 
 let url = "http://localhost:3334/api/menu";
 
-submitUpdate.addEventListener('click', editPost, false);
+
+
+
 
 /*closeBtn.addEventListener('click', function (){
     alertBoxEl.style.display = "none";
 });*/
 
 //Nå skyddad route
-addProdBtn.addEventListener("click", accessAddProd, false);
+//addProdBtn.addEventListener("click", accessAddProd, false);
 
 getProductList();
 
@@ -93,17 +97,20 @@ async function getProductList(){
 function makeProductList(data){
     productlistEl.innerHTML = "";
     let newEl = document.createElement("div");
+    newEl.classname = "admin-product-item";
 
     data = Object.values(data);
 
     data.forEach(dat => {
+
+        let adminProdBox = document.createElement("div");
+        adminProdBox.id = `prod-${dat.prod_id}`;
+        //<div class="product-div">
+        adminProdBox.innerHTML =`
         
-        newEl.innerHTML +=`
-        <div class="product-div">
         <h2 class="product-name">${dat.prod_name} | ${dat.prod_price}</h2>
         <h5 class="product-category">${dat.prod_category}(Art.nr.${dat.prod_id})</h5>
-        <p class="product-description">${dat.prod_description}</p>            
-        </div>
+        <p class="product-description">${dat.prod_description}</p>   
         `;     
 
         let deleteBtn = document.createElement("button");
@@ -112,7 +119,7 @@ function makeProductList(data){
         deleteBtn.className = "deleteBtn"; 
         deleteBtn.addEventListener('click', () => deletePost(dat.prod_id), false);
 
-        newEl.appendChild(deleteBtn);
+        adminProdBox.appendChild(deleteBtn);
 
         let editBtn = document.createElement("button");
         editBtn.textContent = "Uppdatera";
@@ -120,18 +127,38 @@ function makeProductList(data){
         editBtn.className = "editBtn"; 
         editBtn.addEventListener('click', () => toggleEdit(), false);
 
-        newEl.appendChild(editBtn);
-        adminAreaEl.appendChild(newEl);
+        adminProdBox.appendChild(editBtn);
+        newEl.appendChild(adminProdBox);
+       
        
        });
-       
+       adminAreaEl.appendChild(newEl);
 }
 
 //editBtn.addEventListener('click', () => editPost(dat.prod_id, dat), false);
 
-function toggleEdit(){
+async function toggleEdit(){
+    
+    /*const response = await fetch('/data');
+    const data = await response.json();
+
+    document.getElementById('prod_category').value = data.prod_category;
+    document.getElementById('prod_name').value = data.prod_name;
+    document.getElementById('prod-price').value = data.prod_price;
+    document.getElementById('prod-description').value = data.prod_category;*/
+    //Visa modalen
     updateModal.style.display = "block";
 
+}
+
+closeModal.onclick = function() {
+    updateModal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if(event.target == updateModal){
+        updateModal.style.display = "none";
+    }
 }
 
 //Radera produkt
@@ -153,25 +180,25 @@ async function deletePost(id){
         let data = await response.json();
         console.log("Posten raderad: ", data);
 
-       /* let deletePop = document.querySelector(".deleteBtn");
-        deletePop.addEventListener('click', function () {
-            alertMsgEl.innerHTML = "Produkten raderad!";
-            alertBoxEl.style.display = "block";
-        });*/
+     
 
         getProductList(); //Uppdatera listan så den raderade posten försvinner
     } catch (error) {
         console.error("Error: ", error);
-        //Gör popup för felmeddelande?
+        
     }
 }
 
-async function editPost(id, data){
+/*submitUpdate.addEventListener('click', async(event) => {
+    const id =event.target.g...
+}editPost, false);*/
+
+async function editPost(){
     
-    prodName.value = data.prod_name;
+    /*prodName.value = data.prod_name;
     prodCategory.value = data.prod_category;
     prodPrice.value = data.prod_price;
-    prodDescription.value = data.prod_description;
+    prodDescription.value = data.prod_description;*/
 
    
 
@@ -179,12 +206,13 @@ async function editPost(id, data){
     prod_name: prodName.value,
     prod_category: prodCategory.value,
     prod_price: prodPrice.value,
-    prod_description: prodDescription.value
+    prod_description: prodDescription.value,
+    prod_id: prod_id
 }
 
     try{
-        const response = await fetch(`http://localhost:3334/api/menu/edit/${id}`, {
-            method: 'PUT',
+        const response = await fetch(`http://localhost:3334/api/menu/edit/${prod_id}`, {
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },

@@ -1,5 +1,9 @@
 //Styling specifikt för admin-element 
 
+#getadmin-btn{
+  display: none;
+}
+
 /*INDEX, side menu*/
 #show-admin-login:hover, #create-admin-login:hover{
   cursor: pointer;

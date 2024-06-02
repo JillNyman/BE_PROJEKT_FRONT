@@ -6,23 +6,24 @@
 }*/
 
 /*LÄNKAR*/
-.side-menu a{    
+a{    
     display: inline-flex;
     flex-wrap: wrap;
     border: 4px double #e4c5bb;
-    padding: 5px 15px;
+    padding: 10px 15px;
     margin: 5px auto;
     line-height: 1;   
     color: #747e77;
+    background-color: #f0e4e5;
 }
 
-.side-menu a:hover{
+a:hover{
     background-color: #e4c5bb;
     border: 4px double #f0e4e5;
    
 }
 
-.side-menu a:visited{
+a:visited{
     color: #97a49b;
 }
 
@@ -58,7 +59,7 @@
     //padding-right: 25px;
     margin: auto 5% auto auto;
 
-    transition: width 0.6s, height 0.6s, font-size 0.6s; //ändra typ!!!
+    //transition: width 0.6s, height 0.6s, font-size 0.6s; //ändra typ!!!
 
     &:hover{
         width: 100px;
@@ -83,6 +84,49 @@
     &:visited{        
         color: #97a49b;        
     }
+}
+
+.add-btn a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+
+    //font-weight: 1800;
+    font-size: 20px;
+    text-decoration: none;
+    color: #747e77;
+    border: 4px double #747e77;
+    border-radius: 50%;
+    //padding-left: 25px;
+    //padding-right: 25px;
+    margin: auto 5% auto auto;
+
+    //transition: width 0.6s, height 0.6s, font-size 0.6s; //ändra typ!!!
+
+    &:hover{
+        width: 100px;
+        height: 100px;
+        //padding: 0 15px;
+        border-radius: 50%;
+        font-size: 20px;        
+        background-color: #97a49b;
+        border-color: #e4c5bb;
+        color: #e4c5bb;
+    }
+
+   /* &:hover::after{
+        content: "+";
+    }
+
+    &::after{
+        content: "Lägg till";
+    }
+
+    &:visited{        
+        color: #97a49b;        
+    }*/
 }
 
 .btn-container{
