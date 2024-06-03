@@ -3,7 +3,7 @@
 
 //Sido-meny admin
 const showAdminLoginEl = document.getElementById("show-admin-login"); //knapp för att visa inlogg admin
-const createAdminLoginEl = document.getElementById("create-admin-login"); //knapp skapa ny 
+//const createAdminLoginEl = document.getElementById("create-admin-login"); //knapp skapa ny 
 
 //Sidans huvudområde
 const mainAreaEl = document.getElementById("index-area");
@@ -24,6 +24,7 @@ const messageEl = document.getElementById("message");//Eventuellt meddelande til
 
 //Eventlyssnare
 loginAdminBtnEl.addEventListener("click", loginAdmin, false); //logga in admin
+//createAdminLoginEl.addEventListener("click", createAdmin, false); //skapa admin
 
 //visa login admin
 showAdminLoginEl.onclick = function () {
@@ -76,13 +77,12 @@ async function loginAdmin(e){
         let adminBtn = document.getElementById("getadmin-btn");
 
         adminBtn.style.display = "block";
-        //return window.location.href = "http://127.0.0.1:54896/admin.html";
+       
         
     } else {
         console.log("Fel e-postadress eller lösenord");
     }
     }catch (error){
-        //console.error("Error: " + error);
         messageEl.innerHTML = "Fel användarnamn eller lösenord!";
     
     }

@@ -46,7 +46,22 @@
     background-color: #e4c5bb;
 }
 
- /* Basic styles for the modal */
+//Lista på meddelande från kunder
+.message-div{
+  border: 8px double #c9d2cd;
+  padding: 4%;
+  font-family: 'playfair display';
+}
+
+.message-name{
+  border-bottom: 2px solid #c9d2cd;
+}
+
+.message-message{
+  font-size: small;
+}
+
+ /* modalen*/
  .modal {
     display: none;
     position: fixed;
@@ -59,6 +74,8 @@
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
   }
+
+  //fixa
   .modal-content {
     background-color: #fefefe;
     margin: 15% auto;

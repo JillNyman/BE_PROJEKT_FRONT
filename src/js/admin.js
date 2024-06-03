@@ -1,14 +1,9 @@
 "use strict";
 //Kopplat till admin.html
 
-//const addProdBtn = document.getElementById("add-product-link"); //Länk till "lägg till produkt"
-
 const productlistEl = document.getElementById("product-list"); //produktlist
 const adminAreaEl = document.getElementById("admin-area"); 
-//const alertBoxEl = document.getElementById("admin-alert-box");
-//const alertMsgEl = document.getElementById("admin-alert-msg");
-//const closeBtn = document.querySelector(".close");
-
+//Fält i modalen
 const prodName = document.getElementById('prod-name');
 const prodCategory = document.getElementById('prod-category');
 const prodPrice = document.getElementById('prod-price');
@@ -20,54 +15,9 @@ const closeModal = document.getElementsByClassName('close');
 
 let url = "http://localhost:3334/api/menu";
 
-
-
-
-
-/*closeBtn.addEventListener('click', function (){
-    alertBoxEl.style.display = "none";
-});*/
-
-//Nå skyddad route
-//addProdBtn.addEventListener("click", accessAddProd, false);
-
+//Hämta produklista vid laddning av sidan
 getProductList();
 
-//Åtkomst skyddad route
-async function accessAddProd(e){
-    e.preventDefault();
-
-    try{
-        if(!localStorage.getItem("token")) {
-            alert("Du måste vara inloggad för att redigera produktlistan.");
-            
-        }
-        //Skicka token vid varje anrop
-        let token = localStorage.getItem("token");
-        console.log("Lagrad token: ", token);
-
-        let response = await fetch('http://localhost:3334/api/protected', {
-            method: 'GET',
-            headers: {
-                'Authorization': 'Bearer ' + token
-            }
-        });
-
-        let data = response.status;
-        if(!response.ok){
-            alert("Du har inte tillgång till sidan!");
-            throw new Error("Du har inte tillgång till sidan!");
-        }
-
-        if(response.status === 200) {
-            window.location.href = "addproduct.html";
-            console.log("Du fick tillgång till skyddad route! ", data);
-        }
-    } catch (error) {
-        console.error("Error: ", error);
-        alert("Lyckades inte ge dig tillgång!");
-    }
-}
 
 //Hämta lista på produkter
 async function getProductList(){
@@ -93,7 +43,7 @@ async function getProductList(){
 }
 };
 
-//Skriv ut listan FUNKAR
+//Skriv ut listan 
 function makeProductList(data){
     productlistEl.innerHTML = "";
     let newEl = document.createElement("div");
@@ -105,52 +55,65 @@ function makeProductList(data){
 
         let adminProdBox = document.createElement("div");
         adminProdBox.id = `prod-${dat.prod_id}`;
-        //<div class="product-div">
-        adminProdBox.innerHTML =`
-        
-        <h2 class="product-name">${dat.prod_name} | ${dat.prod_price}</h2>
-        <h5 class="product-category">${dat.prod_category}(Art.nr.${dat.prod_id})</h5>
+
+        adminProdBox.innerHTML =`        
+        <h2 class="product-name" id="pn-${dat.prod_name}">${dat.prod_name} | ${dat.prod_price}</h2>
+        <h5 class="product-category">${dat.prod_category}   (Art.nr.${dat.prod_id})</h5>
         <p class="product-description">${dat.prod_description}</p>   
         `;     
 
         let deleteBtn = document.createElement("button");
         deleteBtn.textContent = "Radera";
-        deleteBtn.id = dat.prod_id; 
+        deleteBtn.dataset.id = dat.prod_id; 
         deleteBtn.className = "deleteBtn"; 
-        deleteBtn.addEventListener('click', () => deletePost(dat.prod_id), false);
+        deleteBtn.addEventListener('click', (event) =>{    // const prodID = event.target.dataset.id;
+            //deleteBtn.dataset.id = prodID;
+            deletePost(id);
+
+        });
 
         adminProdBox.appendChild(deleteBtn);
 
         let editBtn = document.createElement("button");
         editBtn.textContent = "Uppdatera";
-        editBtn.id = dat.prod_id; 
+        editBtn.dataset.productId = dat.prod_id;
         editBtn.className = "editBtn"; 
-        editBtn.addEventListener('click', () => toggleEdit(), false);
-
+        editBtn.addEventListener('click', (event) => {
+            const prod_id = event.target.dataset.productId;
+            updateModal.dataset.productId = prod_id;
+            toggleEdit(prod_id);
+        });
         adminProdBox.appendChild(editBtn);
-        newEl.appendChild(adminProdBox);
+        newEl.appendChild(adminProdBox);       
        
+    });
        
-       });
-       adminAreaEl.appendChild(newEl);
+    adminAreaEl.appendChild(newEl);
 }
 
-//editBtn.addEventListener('click', () => editPost(dat.prod_id, dat), false);
+async function toggleEdit(prod_id){
+      
+    //Hämta elementet för vald produkt
+    const productEl = document.getElementById(`prod-${prod_id}`);
 
-async function toggleEdit(){
-    
-    /*const response = await fetch('/data');
-    const data = await response.json();
+    //Hämta värden från elementen
+    const prodNameEl = productEl.querySelector('.product-name');
+    const prodCatEl = productEl.querySelector('.product-category');
+    const prodDesEl = productEl.querySelector('.product-description');
 
-    document.getElementById('prod_category').value = data.prod_category;
-    document.getElementById('prod_name').value = data.prod_name;
-    document.getElementById('prod-price').value = data.prod_price;
-    document.getElementById('prod-description').value = data.prod_category;*/
-    //Visa modalen
-    updateModal.style.display = "block";
+    //Separera produktnamn och pris
+    const [prod_name, prod_price] = prodNameEl.textContent.split(' | ');
+    //Lägg in värden i modalformuläret
+    prodName.value = prod_name.trim();
+    prodPrice.value = prod_price.trim();
+    prodCategory.value = prodCatEl.textContent.replace(` (Art.nr.${prod_id})`, '').trim();
+    prodDescription.value = prodDesEl.textContent.trim();
+
+     //Visa modalen
+    updateModal.style.display = "block";    
 
 }
-
+//Stäng modal
 closeModal.onclick = function() {
     updateModal.style.display = "none";
 }
@@ -164,6 +127,7 @@ window.onclick = function(event) {
 //Radera produkt
 async function deletePost(id){
     console.log("Hämtat från DOM: ", id);
+    //const id = deleteBtn.dataset.id;
 
     try{
         const response = await fetch(`http://localhost:3333/api/menu/delete/${id}`, {
@@ -178,9 +142,7 @@ async function deletePost(id){
         }
 
         let data = await response.json();
-        console.log("Posten raderad: ", data);
-
-     
+        console.log("Posten raderad: ", data);     
 
         getProductList(); //Uppdatera listan så den raderade posten försvinner
     } catch (error) {
@@ -189,30 +151,26 @@ async function deletePost(id){
     }
 }
 
-/*submitUpdate.addEventListener('click', async(event) => {
-    const id =event.target.g...
-}editPost, false);*/
+//Eventlyssnare för uppdatera-knapp
+submitUpdate.addEventListener('click', editPost, false);
 
-async function editPost(){
-    
-    /*prodName.value = data.prod_name;
-    prodCategory.value = data.prod_category;
-    prodPrice.value = data.prod_price;
-    prodDescription.value = data.prod_description;*/
+//Redigera produktinfo i modal
+async function editPost(e){  
+    e.preventDefault();
 
-   
+    const prod_id = updateModal.dataset.productId;
 
     let product = {
-    prod_name: prodName.value,
-    prod_category: prodCategory.value,
-    prod_price: prodPrice.value,
-    prod_description: prodDescription.value,
-    prod_id: prod_id
-}
+        prod_name: prodName.value,
+        prod_category: prodCategory.value,
+        prod_price: prodPrice.value,
+        prod_description: prodDescription.value,
+        prod_id: prod_id
+    };
 
     try{
         const response = await fetch(`http://localhost:3334/api/menu/edit/${prod_id}`, {
-            method: 'POST',
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -225,10 +183,13 @@ async function editPost(){
 
         const result = await response.json();
         console.log(result);
-        alert(result.message);
+        
+        window.location.reload();
+        
         updateModal.style.display = "none";
-        getProductList();
+        //verkar inte funka?
     } catch (error){
         console.error("Fel vid uppdatering: ", error);
     }
 };
+

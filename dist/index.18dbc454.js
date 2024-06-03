@@ -587,7 +587,7 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 "use strict";
 /*Funktioner på startsidan */ //Sido-meny admin
 const showAdminLoginEl = document.getElementById("show-admin-login"); //knapp för att visa inlogg admin
-const createAdminLoginEl = document.getElementById("create-admin-login"); //knapp skapa ny 
+//const createAdminLoginEl = document.getElementById("create-admin-login"); //knapp skapa ny 
 //Sidans huvudområde
 const mainAreaEl = document.getElementById("index-area");
 //Admin
@@ -603,6 +603,7 @@ const newInputAdminPassEl = document.getElementById("new_admin_password"); //inp
 const messageEl = document.getElementById("message"); //Eventuellt meddelande till användaren  
 //Eventlyssnare
 loginAdminBtnEl.addEventListener("click", loginAdmin, false); //logga in admin
+//createAdminLoginEl.addEventListener("click", createAdmin, false); //skapa admin
 //visa login admin
 showAdminLoginEl.onclick = function() {
     if (adminContainerEl.style.display === "none") {
@@ -642,10 +643,8 @@ async function loginAdmin(e) {
             localStorage.setItem("token", data.response.token);
             let adminBtn = document.getElementById("getadmin-btn");
             adminBtn.style.display = "block";
-        //return window.location.href = "http://127.0.0.1:54896/admin.html";
         } else console.log("Fel e-postadress eller l\xf6senord");
     } catch (error) {
-        //console.error("Error: " + error);
         messageEl.innerHTML = "Fel anv\xe4ndarnamn eller l\xf6senord!";
     }
 }

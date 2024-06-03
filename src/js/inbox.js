@@ -48,14 +48,11 @@ async function getMessageList(){
          let answerBtn = document.createElement("button");
          answerBtn.textContent = "Svara";
          //deleteBtn.id = dat.prod_id; 
-         answerBtn.className = "answerBtn"; 
-        
+         answerBtn.className = "answerBtn";         
  
-         newEl.appendChild(answerBtn);
- 
+         newEl.appendChild(answerBtn); 
          
-         postMessageEl.appendChild(newEl);
-        
+         postMessageEl.appendChild(newEl);        
         });
         
  }

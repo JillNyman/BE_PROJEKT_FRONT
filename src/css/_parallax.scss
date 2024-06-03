@@ -165,20 +165,6 @@
     width: 70%;
     margin: auto auto 40px auto;
   }
-
- 
-
-/*.buffer:before{
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: url("IMAGES/header_beskuren.jpg") center center; 
-    opacity: .4;
-}*/
   
   .parallax-container2 {
     flex-direction: row;
@@ -228,37 +214,3 @@
     gap: 1.6em;
   }
 
-    
-  
-/*
-.parallax {
-    position: relative;
-    height: $parallax-height;
-    overflow: hidden;
-  
-    .parallax-layer {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: $parallax-height;
-      background-size: cover;
-      background-position: center;
-      transform: translateZ(0); // För att förhindra suddiga bakgrundsbilder
-    }
-  
-    .layer1 {
-      background-image: $layer1-bg;
-      transform: translateZ(-1px) scale(2); // Skala för att kompensera för translateZ
-    }
-
-    /*.layer2 {
-        background-image: $layer2-bg;
-        transform: translateZ(-0.5px) scale(1.5);
-      }
-    
-      .layer3 {
-        background-image: $layer3-bg;
-        transform: translateZ(0) scale(1);
-      }
-}*/

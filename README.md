@@ -4,6 +4,5 @@ För att testa:
 användarnamn "Bagare2"
 lösenord "password"
 
-Följande ska lösas inom närmsta dygnet:
-- uppdatera-funktionen
-- bilder i menyn
+För serversidan av applikationen används PORT = 3334
+
