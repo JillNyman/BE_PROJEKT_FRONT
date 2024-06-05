@@ -586,19 +586,27 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 },{}],"7v6sf":[function(require,module,exports) {
 "use strict";
 let goodThingsEl = document.getElementById("good-things");
+//Hämta produkter inom kategorin när sidan laddas
 getGood();
 //Hämta lista på produkter
 async function getGood() {
-    //e.preventDefault();
-    const response = await fetch("http://localhost:3334/api/menu", {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json"
+    try {
+        const response = await fetch("http://localhost:3333/api/menu", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+        if (!response.ok) {
+            console.log("Lyckades inte h\xe4mta data");
+            return;
         }
-    });
-    let data = await response.json();
-    console.table(data);
-    makeGoodList(data);
+        let data = await response.json();
+        console.table(data);
+        makeGoodList(data);
+    } catch (error) {
+        console.error("Fel n\xe4r data skulle h\xe4mtas: ", error);
+    }
 }
 //Skriv ut listan
 function makeGoodList(data) {
@@ -607,19 +615,18 @@ function makeGoodList(data) {
             let newEl = document.createElement("div");
             newEl.className = "product-frame";
             newEl.innerHTML = `
+        <div class="product-info">
         <h3>${dat.prod_name}</h3>            
         <h4>${dat.prod_price} </h4>
-        <div class="prod-img">
-        <img src="./src/css/images/${dat.prod_id}.jpg" class="product-img" />  </div>
+        </div>
+        <div class="product-desc">  
         <p>${dat.prod_description} </p>    
-          
+        </div>          
             `;
-            let orderBtn = document.createElement("button");
-            orderBtn.textContent = "Best\xe4ll";
-            orderBtn.id = dat.prod_id;
-            orderBtn.className = "orderBtn";
-            orderBtn.addEventListener("click", ()=>orderProduct(dat.prod_id));
-            newEl.appendChild(orderBtn);
+            let plusBtn = document.createElement("a");
+            plusBtn.className = "order-btn";
+            plusBtn.href = "#";
+            newEl.appendChild(plusBtn);
             goodThingsEl.appendChild(newEl);
         }
     });

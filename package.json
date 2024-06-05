@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "source": "src/index.html",
+  "type": "module",
   "scripts": {
     "build-css": "sass src/css/main.scss dist/main.css",
     "watch-css": "sass --watch src/css/main.scss:dist/main.css",

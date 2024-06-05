@@ -3,7 +3,6 @@
 
 //Sido-meny admin
 const showAdminLoginEl = document.getElementById("show-admin-login"); //knapp för att visa inlogg admin
-//const createAdminLoginEl = document.getElementById("create-admin-login"); //knapp skapa ny 
 
 //Sidans huvudområde
 const mainAreaEl = document.getElementById("index-area");
@@ -24,9 +23,8 @@ const messageEl = document.getElementById("message");//Eventuellt meddelande til
 
 //Eventlyssnare
 loginAdminBtnEl.addEventListener("click", loginAdmin, false); //logga in admin
-//createAdminLoginEl.addEventListener("click", createAdmin, false); //skapa admin
 
-//visa login admin
+//visa login admin-rutan
 showAdminLoginEl.onclick = function () {
     if(adminContainerEl.style.display === "none") {
         adminContainerEl.style.display = "block";        
@@ -38,22 +36,12 @@ showAdminLoginEl.onclick = function () {
     }
 }
 
-//knapp "visa skapa admin"
-createAdminLoginEl.onclick = function () {
-    if(newAdminContainerEl.style.display === "none") {
-        newAdminContainerEl.style.display ="block";
-        adminContainerEl.style.display = "none";
-        mainAreaEl.style.display = "none";        
-    } else {
-        newAdminContainerEl.style.display = "none";
-    }
-}
-
+//inloggning
 async function loginAdmin(e){
     e.preventDefault();
 
     try{
-        let response = await fetch('http://localhost:3334/api/auth/loginadmin', {
+        let response = await fetch('http://localhost:3333/api/auth/loginadmin', {
         method: "POST",
         headers: {
             "Content-type": "application/json"
@@ -76,8 +64,7 @@ async function loginAdmin(e){
         localStorage.setItem('token', data.response.token); 
         let adminBtn = document.getElementById("getadmin-btn");
 
-        adminBtn.style.display = "block";
-       
+        adminBtn.style.display = "block";       
         
     } else {
         console.log("Fel e-postadress eller lösenord");

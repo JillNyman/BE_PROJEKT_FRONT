@@ -34,64 +34,63 @@
   resize: none;
 }
 
-/*Admin alertbox*/
-.admin-alert-box{
-    display: none;
-    position: fixed;
-    z-index: 11;
-    width: 30%;
-    left: 35%;
-    right: 35%;
-    top: 25%;
-    background-color: #e4c5bb;
-}
-
 //Lista på meddelande från kunder
 .message-div{
-  border: 8px double #c9d2cd;
+  border-top: 8px double #c9d2cd;
   padding: 4%;
+  font-family: 'playfair display';
+  text-align: left;
+}
+
+.message-name, .message-digits {
+  border-bottom: 2px solid #c9d2cd;
+  font-size: 14px;
+}
+
+.message-name h4{
+  font-size: 14px;
   font-family: 'playfair display';
 }
 
-.message-name{
-  border-bottom: 2px solid #c9d2cd;
+.message-message p{
+  font-size: 12px;
 }
 
-.message-message{
-  font-size: small;
+.answerBtn{
+  margin-bottom: 15px;
 }
 
  /* modalen*/
- .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
-  }
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
 
-  //fixa
   .modal-content {
-    background-color: #fefefe;
+    background-color: #c9d2cd;
     margin: 15% auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 8px double #97a49b;
     width: 80%;
+    color: #747e77;
+    font-weight: 600;
   }
   .close {
-    color: #aaa;
+    color: #97a49b;
     float: right;
     font-size: 28px;
     font-weight: bold;
   }
   .close:hover,
   .close:focus {
-    color: black;
+    color: #747e77;
     text-decoration: none;
     cursor: pointer;
   }
@@ -99,12 +98,8 @@
   #add-product-link:hover{
     cursor: pointer;
   }
-
   
 #menu-item-form label, #menu-item-form input{
   margin: 10px;
 }
 
-@media screen and (max-width: 599px){
-  
-}

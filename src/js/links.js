@@ -1,17 +1,17 @@
 "use strict";
 
+export function accessAddProd(){
+    console.log("Addproduct exporterad");
+}
+
+export function accessList(){
+    console.log("Admin productlist exporterad");
+}
+
+export function accessInbox(){
+    console.log("Inbox exporterad");
+}
 //Funktioner i admingränssnittet som finns på samtliga admin-sidor
-
-const addProdBtn = document.getElementById("add-product-link"); //Länk till "lägg till produkt"
-const inboxBtn = document.getElementById("inbox-link"); //länk till inbox.html
-const adminBtn = document.getElementById("admin-link"); //länk till admin.html
-
-//Nå skyddad route, addproduct.html
-addProdBtn.addEventListener("click", accessAddProd, false);
-//Nå skyddad route, inbox.html
-inboxBtn.addEventListener("click", accessInbox, false);
-//Åtkomst till skyddad route: admin.html
-adminBtn.addEventListener("click", accessList, false);
 
 //Åtkomst skyddad route: addproduct.html
 async function accessAddProd(e){
@@ -27,7 +27,7 @@ async function accessAddProd(e){
         let token = localStorage.getItem("token");
         console.log("Lagrad token: ", token);
 
-        let response = await fetch('http://localhost:3334/api/protected', {
+        let response = await fetch('http://localhost:3333/api/protected', {
             method: 'GET',
             headers: {
                 'Authorization': 'Bearer ' + token
@@ -66,7 +66,7 @@ async function accessInbox(e){
         let token = localStorage.getItem("token");
         console.log("Lagrad token: ", token);
 
-        let response = await fetch('http://localhost:3334/api/protected', {
+        let response = await fetch('http://localhost:3333/api/protected', {
             method: 'GET',
             headers: {
                 'Authorization': 'Bearer ' + token
@@ -105,7 +105,7 @@ async function accessList(e){
         let token = localStorage.getItem("token");
         console.log("Lagrad token: ", token);
 
-        let response = await fetch('http://localhost:3334/api/protected', {
+        let response = await fetch('http://localhost:3333/api/protected', {
             method: 'GET',
             headers: {
                 'Authorization': 'Bearer ' + token

@@ -1,5 +1,6 @@
 "use strict";
 
+//Inputfält i formuläret contact.html
 const inputSender = document.getElementById("sender");
 const inputEmail = document.getElementById("email");
 const inputPhone = document.getElementById("phone");
@@ -7,8 +8,10 @@ const inputMessage = document.getElementById("customer-message");
 const sendBtn = document.getElementById("send-btn");
 const customerMsg = document.getElementById("customer-msg");
 
+//Skicka-knapp
 sendBtn.addEventListener('click', sendMessage, false);
 
+//Skicka meddelande
 async function sendMessage(e){
     e.preventDefault();
 
@@ -20,7 +23,7 @@ async function sendMessage(e){
     }
 
     try{
-        const response = await fetch('http://localhost:3334/api/contact', {
+        const response = await fetch('http://localhost:3333/api/contact', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -34,7 +37,6 @@ async function sendMessage(e){
             return;
         }
         let data = await response.json();
-        //customerMsg.innerHTML = "Tack! Ditt meddelande har skickats!";
         alert("Tack! Ditt meddelande har skickats!");
         inputSender.value = "";
         inputEmail.value = "";

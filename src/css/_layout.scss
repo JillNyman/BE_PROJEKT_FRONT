@@ -1,26 +1,26 @@
 
 
-
-.footer {
-   
+//Footer
+.footer {   
     border-top: 8px double #c9d2cd;
-    border-bottom: 8px double #c9d2cd;
-    
+    border-bottom: 8px double #c9d2cd;    
     padding: 20px;
     background-color: #f0e4e5;
 }
 
-.footer-list a, .btn-smallscreen a{
-    //padding: 5%;
-    text-align: left;
-    width: auto;
-    margin-right: 30px;
+.footer-list, .btn-smallscreen{
+    display: flex;
+    flex-direction: column;
 }
 
+.footer-list a, .btn-smallscreen a{
+    padding: 1%;
+    text-align: left;
+    width: auto;
+}
 
 .footer-list a:visited, .btn-smallscreen a:visited{
-    color: #747e77;
-   
+    color: #747e77;   
 }
 
 /*BRÖDSMULOR*/
@@ -34,8 +34,7 @@
 }
 ul.breadcrumb{
     padding: 10px 25px;
-    list-style: none;
-    
+    list-style: none;    
 } 
 
 ul.breadcrumb li{
@@ -47,30 +46,23 @@ ul.breadcrumb li+li:before{
     content: "/\00a0";
 }
 
-ul.breadcrumb li a{
+ul.breadcrumb a{
     text-decoration: none;
 }
 
 ul.breadcrumb li a:hover{
     cursor: pointer;
-    font-weight: 700;
+    color: darken(#747e77, 10%);
+    text-decoration: underline 1.5px;
 }
 
 ul.breadcrumb li a:visited{
     color: #747e77;
 }
- li.ur-here{
-    font-weight: 700;
+ .ur-here{
+    color: darken(#747e77, 10%);
  }
 /*BRÖDSMULOR SLUT*/
 
-@media screen and (max-width: 599px){
-    .side-menu{       
-        width: 90%;
-        height: auto;
-        border: 8px double #e4c5bb;
-        padding: 5px 5px;
-        margin: 20px auto;
-    }  
-}
+
 

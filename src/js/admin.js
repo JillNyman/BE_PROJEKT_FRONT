@@ -1,19 +1,33 @@
 "use strict";
 //Kopplat till admin.html
 
+//Importera funktioner till knapparna
+import { accessInbox } from "./links";
+import { accessAddProd } from "./links";
+
+const addProdBtn = document.getElementById("add-product-link"); //Länk till "lägg till produkt"
+const inboxBtn = document.getElementById("inbox-link"); //länk till inbox.html
+
+//Nå skyddad route, addproduct.html
+addProdBtn.addEventListener("click", accessAddProd, false);
+//Nå skyddad route, inbox.html
+inboxBtn.addEventListener("click", accessInbox, false);
+
+
 const productlistEl = document.getElementById("product-list"); //produktlist
-const adminAreaEl = document.getElementById("admin-area"); 
+//const adminAreaEl = document.getElementById("admin-area"); 
+
 //Fält i modalen
 const prodName = document.getElementById('prod-name');
 const prodCategory = document.getElementById('prod-category');
 const prodPrice = document.getElementById('prod-price');
 const prodDescription = document.getElementById('prod-description');
-const updateForm = document.getElementById('update-form');
+//const updateForm = document.getElementById('update-form');
 const updateModal = document.getElementById('update-modal');
 const submitUpdate = document.getElementById('submit-update');
 const closeModal = document.getElementsByClassName('close');
 
-let url = "http://localhost:3334/api/menu";
+let url = "http://localhost:3333/api/menu";
 
 //Hämta produklista vid laddning av sidan
 getProductList();
@@ -21,7 +35,7 @@ getProductList();
 
 //Hämta lista på produkter
 async function getProductList(){
-   // e.preventDefault();
+  
     try{
     const response = await fetch(url, {
         method: 'GET',
@@ -66,8 +80,7 @@ function makeProductList(data){
         deleteBtn.textContent = "Radera";
         deleteBtn.dataset.id = dat.prod_id; 
         deleteBtn.className = "deleteBtn"; 
-        deleteBtn.addEventListener('click', (event) =>{    // const prodID = event.target.dataset.id;
-            //deleteBtn.dataset.id = prodID;
+        deleteBtn.addEventListener('click', (event) =>{   const id = event.target.dataset.id;
             deletePost(id);
 
         });
@@ -88,8 +101,9 @@ function makeProductList(data){
        
     });
        
-    adminAreaEl.appendChild(newEl);
+    productlistEl.appendChild(newEl);
 }
+
 
 async function toggleEdit(prod_id){
       
@@ -110,9 +124,9 @@ async function toggleEdit(prod_id){
     prodDescription.value = prodDesEl.textContent.trim();
 
      //Visa modalen
-    updateModal.style.display = "block";    
-
+    updateModal.style.display = "block";  
 }
+
 //Stäng modal
 closeModal.onclick = function() {
     updateModal.style.display = "none";
@@ -126,8 +140,7 @@ window.onclick = function(event) {
 
 //Radera produkt
 async function deletePost(id){
-    console.log("Hämtat från DOM: ", id);
-    //const id = deleteBtn.dataset.id;
+    console.log("Hämtat från DOM: ", id);  
 
     try{
         const response = await fetch(`http://localhost:3333/api/menu/delete/${id}`, {
@@ -143,11 +156,10 @@ async function deletePost(id){
 
         let data = await response.json();
         console.log("Posten raderad: ", data);     
-
+        
         getProductList(); //Uppdatera listan så den raderade posten försvinner
     } catch (error) {
-        console.error("Error: ", error);
-        
+        console.error("Error: ", error);        
     }
 }
 
@@ -169,7 +181,7 @@ async function editPost(e){
     };
 
     try{
-        const response = await fetch(`http://localhost:3334/api/menu/edit/${prod_id}`, {
+        const response = await fetch(`http://localhost:3333/api/menu/edit/${prod_id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -187,7 +199,7 @@ async function editPost(e){
         window.location.reload();
         
         updateModal.style.display = "none";
-        //verkar inte funka?
+        
     } catch (error){
         console.error("Fel vid uppdatering: ", error);
     }

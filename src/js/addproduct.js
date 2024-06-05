@@ -1,6 +1,18 @@
 "use strict";
 //Admin-sida där användare kan lägga till produkter
 
+import { accessInbox } from "./links";
+import { accessList } from "./links";
+
+const inboxBtn = document.getElementById("inbox-link"); //länk till inbox.html
+const adminBtn = document.getElementById("admin-link"); //länk till admin.html
+
+//Nå skyddad route, inbox.html
+inboxBtn.addEventListener("click", accessInbox, false);
+//Åtkomst till skyddad route: admin.html
+adminBtn.addEventListener("click", accessList, false);
+
+
 //Lägg till produkt i addproduct.html
 const inputCategory = document.getElementById("item-category");
 const inputName = document.getElementById("item-name");
@@ -23,7 +35,7 @@ async function addProduct(e) {
     };
 
     try{
-    const response = await fetch('http://localhost:3334/api/menu/menu', {
+    const response = await fetch('http://localhost:3333/api/menu/menu', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
@@ -31,20 +43,18 @@ async function addProduct(e) {
         body: JSON.stringify(product)
     });
 
-    let data = await response.json();
+  
     if(!response.ok){
         postMessageEl.innerHTML = "Produkten kunde inte läggas till";
         return;
     }
-
-  
+    let data = await response.json();
         postMessageEl.innerHTML = `Produkten <i>${product.prod_name}</i> har lagts till!`;
         inputCategory.value = '';
         inputName.value = '';
         inputDescription.value = '';
         inputPrice.value = '';
-        return data;
-        
+        return data;        
     
 } catch (error) {
     console.error("Error: ", error);

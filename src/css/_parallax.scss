@@ -1,7 +1,4 @@
-//$parallax-height: 100vh;
-//$layer1-bg: url('./IMAGES/beskuren_index.jpg');
-//$layer2-bg: url('./IMAGES/parallax.jpg');
-//$layer3-bg: url('./IMAGES/parallax.jpg');
+//Parallax-effekt
 
 .parallax-container{
     display: flex;
@@ -9,16 +6,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  
-    /*  this is where the magic happens:  */
-    background-attachment: fixed;
-  
+    background-attachment: fixed;  
     background-image: url('./IMAGES/parallax_0.8.jpg');    
     background-position: center;
     background-size: cover;
-    color: var(--color);
-    row-gap: 4rem;
-  
+    row-gap: 4rem;  
     text-align: center;
 }
 
@@ -28,16 +20,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  
-    /*  this is where the magic happens:  */
-    background-attachment: fixed;
-  
+    background-attachment: fixed;  
     background-image: url('./IMAGES/parallax_cakepops_0.6.jpg');    
     background-position: center;
     background-size: cover;
-    color: var(--color);
-    row-gap: 4rem;
-  
+    row-gap: 4rem;  
     text-align: center;
 }
 
@@ -47,16 +34,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  
-    /*  this is where the magic happens:  */
-    background-attachment: fixed;
-  
+    background-attachment: fixed;  
     background-image: url('./IMAGES/parallax_tarta_0.6.jpg');    
     background-position: center;
     background-size: cover;
-    color: var(--color);
-    row-gap: 4rem;
-  
+    row-gap: 4rem;  
     text-align: center;
 }
 
@@ -66,16 +48,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  
-    /*  this is where the magic happens:  */
-    background-attachment: fixed;
-  
+    background-attachment: fixed;  
     background-image: url('./images/parallax_cookies_0.8.jpg');    
     background-position: center;
     background-size: cover;
-    color: var(--color);
-    row-gap: 4rem;
-  
+    row-gap: 4rem;  
     text-align: center;
 }
 
@@ -85,16 +62,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  
-    /*  this is where the magic happens:  */
-    background-attachment: fixed;
-  
+    background-attachment: fixed;  
     background-image: url('./images/parallax_restaurant.jpg');    
     background-position: center;
     background-size: cover;
-    color: var(--color);
-    row-gap: 4rem;
-  
+    row-gap: 4rem;  
     text-align: center;
 }
 
@@ -104,16 +76,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  
-    /*  this is where the magic happens:  */
-    background-attachment: fixed;
-  
+    background-attachment: fixed;  
     background-image: url('./images/parallax_coffe.jpg');    
     background-position: center;
     background-size: cover;
-    color: var(--color);
-    row-gap: 4rem;
-  
+    row-gap: 4rem;  
     text-align: center;
 }
 
@@ -127,7 +94,6 @@
     border-top: 8px double #c9d2cd;
     border-bottom: 8px double #c9d2cd;
     font-family: 'Petit Formal Script';
-    font-size: larger;
     font-weight: 800;
   }
 
@@ -150,6 +116,23 @@
     justify-content: space-between;
     margin: 5% 10% 2% 10%;
   }
+
+  .admin-links a{
+    display: inline-flex;
+    flex-wrap: wrap;
+    border: 4px double #e4c5bb;
+    padding: 10px 15px;
+    margin: 5px auto;
+    line-height: 1;   
+    color: #747e77;
+    background-color: #f0e4e5;
+  }
+
+  .admin-links a:hover{
+    background-color: #e4c5bb;
+    border: 4px double #f0e4e5;
+  }
+
   .buffer-admin h1{
     text-align: center;
     font-size: 64px;
@@ -159,11 +142,75 @@
     width: auto;
     margin: 60px auto;
     text-align: center;
+    font-size: 64px;
+  }
+
+  .buffer h2{
+    font-size: 34px;
+    text-align: center;
+    margin: 5% auto;
+    max-width: 70%;
   }
 
   .buffer p{
-    width: 70%;
+    width: 60%;
+    max-width: 500px;
     margin: auto auto 40px auto;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .buffer .order-btn{
+    margin: 2% auto;    
+    border: 8px double lighten(#747e77, 10%) ;
+
+    
+    &:hover{
+      content: "Anmäl";
+      color: darken(#747e77, 10%) ;
+  }
+
+  &:hover::after{
+      content: "Anmäl";
+  }
+
+  &::after{
+      content: "+";
+  }
+
+  &:visited{        
+      color: #97a49b;        
+  }
+  }
+
+  @media screen and (max-width: 599px){
+    .buffer-admin{
+      min-height: 40vh;
+    }
+    .buffer h1, .buffer-admin h1{
+      font-size: 36px;
+    }
+
+    .buffer h2{
+      font-size: 26px;
+      text-align: center;
+      margin: 5% auto;
+      max-width: 80%;
+    }
+
+    .admin-links{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 5% 2% 2% 2%;
+    }
+
+    .admin-links a{
+      width: 85%;
+      padding: 20px auto;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
   }
   
   .parallax-container2 {
