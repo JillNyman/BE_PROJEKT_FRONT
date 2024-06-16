@@ -1,4 +1,4 @@
-"use strict";
+
 
 let cookiesEl = document.getElementById("cookies-buns");
 

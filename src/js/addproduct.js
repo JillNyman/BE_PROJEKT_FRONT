@@ -1,4 +1,4 @@
-"use strict";
+
 //Admin-sida där användare kan lägga till produkter
 
 import { accessInbox } from "./links";
@@ -32,7 +32,7 @@ async function addProduct(e) {
         prod_name: inputName.value,
         prod_description: inputDescription.value,
         prod_price: inputPrice.value
-    };
+    }
 
     try{
     const response = await fetch('http://localhost:3333/api/menu/menu', {
@@ -45,15 +45,15 @@ async function addProduct(e) {
 
   
     if(!response.ok){
-        postMessageEl.innerHTML = "Produkten kunde inte läggas till";
+        console.log("Något gick fel");
         return;
     }
     let data = await response.json();
-        postMessageEl.innerHTML = `Produkten <i>${product.prod_name}</i> har lagts till!`;
-        inputCategory.value = '';
-        inputName.value = '';
-        inputDescription.value = '';
-        inputPrice.value = '';
+    alert(`Produkten ${product.prod_name} har lagts till!`);
+        inputCategory.value = "";
+        inputName.value = "";
+        inputDescription.value = "";
+        inputPrice.value = "";
         return data;        
     
 } catch (error) {

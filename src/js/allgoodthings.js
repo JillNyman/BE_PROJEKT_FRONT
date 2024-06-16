@@ -1,5 +1,3 @@
-"use strict";
-
 let goodThingsEl = document.getElementById("good-things");
 
 //Hämta produkter inom kategorin när sidan laddas

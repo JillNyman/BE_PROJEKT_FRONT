@@ -584,7 +584,6 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"bvKFs":[function(require,module,exports) {
-"use strict";
 let cookiesEl = document.getElementById("cookies-buns");
 //Hämta produkter inom kategorin när sidan laddas
 getCookie();

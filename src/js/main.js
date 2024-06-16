@@ -1,4 +1,4 @@
-"use strict";
+
 /*Funktioner på startsidan */
 
 //Sido-meny admin

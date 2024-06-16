@@ -1,4 +1,3 @@
-"use strict";
 
 //Inputfält i formuläret contact.html
 const inputSender = document.getElementById("sender");

@@ -584,7 +584,6 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"1SICI":[function(require,module,exports) {
-"use strict";
 /*Funktioner på startsidan */ //Sido-meny admin
 const showAdminLoginEl = document.getElementById("show-admin-login"); //knapp för att visa inlogg admin
 //Sidans huvudområde

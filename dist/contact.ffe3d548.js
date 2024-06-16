@@ -584,7 +584,6 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"3C9CX":[function(require,module,exports) {
-"use strict";
 //Inputfält i formuläret contact.html
 const inputSender = document.getElementById("sender");
 const inputEmail = document.getElementById("email");

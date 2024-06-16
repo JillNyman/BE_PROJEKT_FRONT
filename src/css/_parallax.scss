@@ -131,6 +131,7 @@
   .admin-links a:hover{
     background-color: #e4c5bb;
     border: 4px double #f0e4e5;
+    cursor: pointer;
   }
 
   .buffer-admin h1{
@@ -168,6 +169,7 @@
     &:hover{
       content: "Anmäl";
       color: darken(#747e77, 10%) ;
+      cursor: pointer;
   }
 
   &:hover::after{

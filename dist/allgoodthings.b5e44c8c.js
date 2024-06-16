@@ -584,7 +584,6 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"7v6sf":[function(require,module,exports) {
-"use strict";
 let goodThingsEl = document.getElementById("good-things");
 //Hämta produkter inom kategorin när sidan laddas
 getGood();

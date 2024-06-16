@@ -8,7 +8,7 @@
     "build-css": "sass src/css/main.scss dist/main.css",
     "watch-css": "sass --watch src/css/main.scss:dist/main.css",
     "start-sass": "live-server dist",
-    "start": "parcel src/index.html",
+    "start": "parcel serve src/index.html --public-url /",
     "build": "parcel build src/index.html"
   },
   "keywords": [],

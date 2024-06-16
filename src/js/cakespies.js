@@ -1,4 +1,4 @@
-"use strict";
+
 
 let cakePieEl = document.getElementById("cakes-pies");
 

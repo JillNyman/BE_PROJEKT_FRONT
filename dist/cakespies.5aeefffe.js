@@ -584,7 +584,6 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"iG7HF":[function(require,module,exports) {
-"use strict";
 let cakePieEl = document.getElementById("cakes-pies");
 //Hämta produkter inom kategorin när sidan laddas
 getCakes();
