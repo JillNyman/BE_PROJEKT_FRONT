@@ -1,0 +1,23 @@
+{
+  "name": "backend_front_projekt",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist .parcel-cache",
+    "start": "npm run clean && parcel src/*.html",
+    "build": "npm run clean && parcel build src/*.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.12.0",
+    "parcel": "^2.12.0",
+    "rimraf": "^6.0.1",
+    "sass": "^1.80.3"
+  },
+  "dependencies": {
+    "backend_front_projekt": "file:"
+  }
+}
